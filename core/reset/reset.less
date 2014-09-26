@@ -1,0 +1,32 @@
+// --------------------
+// CORE: Resets
+// --------------------
+
+@import "core/reset/normalize.less"; // Normalize CSS 
+@import "core/reset/typeset.less"; // Typeset CSS
+
+
+// General Resets
+// --------------
+
+body {
+	font: 16px / 24px sans-serif;
+	font-weight: 400;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+*, *:before, *:after {
+   -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
+   -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
+    box-sizing:        border-box;   /* Everything else */
+}
+
+// BaseKit Resets
+// --------------
+
+.bk-zone {
+  min-height: 40px;
+}
+

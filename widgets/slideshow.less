@@ -1,0 +1,37 @@
+// -------------------------
+// WIDGETS: Slideshow
+// -------------------------
+
+.slideshow {
+	// Element Resets
+    ul { 
+        margin: 0;
+        list-style: none;
+    }
+    figure { margin: 0; }
+
+    // Slide Item
+    .slide-item {
+        display: none;
+        // Current Item
+        &.current {
+        	display: list-item;
+        }
+    }
+
+    // Image Captions
+    .image-title,
+    .image-description {
+        display: block;
+    }
+
+    // Pagination
+    .pagination-button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        &.selected {
+            background-color: @color-swatch2;
+        }
+    }
+}

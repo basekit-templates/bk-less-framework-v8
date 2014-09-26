@@ -1,0 +1,82 @@
+// -------------------------
+// WIDGETS: Multiple Buttons
+// -------------------------
+
+// ------------------
+// #Table of Contents
+// ------------------
+
+// 1. #MAIN BUTTON
+// 2. #PAYPAL BUTTON
+// 3. #DROPBOX BUTTON
+// 4. #TWEET BUTTON
+// 5. #CLICK TO CALL BUTTON
+
+
+// ---------------------
+// 1. #Main Button
+// ---------------------
+
+button,
+.button {   
+    // Button Styles
+    padding: 4px 12px;
+    border: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none; 
+
+    // Font Styles
+    font-family: @font-swatch7-font-family;
+    font-weight: @font-swatch7-font-weight;
+    color: @font-swatch7-color;
+    line-height: @font-swatch7-line-height;
+    letter-spacing: @font-swatch7-letter-spacing;
+    font-size: @font-swatch7-font-size;
+    background-color: @font-swatch7-background-color;
+    &:hover {
+        background-color: @font-swatch7-background-color-hover;
+    }
+}
+
+
+// ---------------------
+// 2. #PayPal Button
+// ---------------------
+
+
+// ---------------------
+// 3. #Dropbox Button
+// ---------------------
+
+.dropbox button,
+.dropbox span {
+    display: inline-block; // Displays button & label inline
+}
+
+
+// ---------------------
+// 4. #Tweet Button
+// ---------------------
+
+.tweet a {
+    padding: 9px 12px;
+    text-decoration: none;
+}
+
+
+// ------------------------
+// 5. #Click to Call Button
+// ------------------------
+
+.clicktocall a {
+    @media @mobile {
+        // Applies button styles at mobile
+        .button;
+        padding: 9px 12px;
+        text-decoration: none;
+    }
+}
+
+

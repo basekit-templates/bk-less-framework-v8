@@ -1,0 +1,30 @@
+// -----------------------
+// WIDGETS: General Widget
+// -----------------------
+
+// Widget Positioning
+.widget {
+	position: relative;
+}
+
+// Zone Widget Spacing
+.widget--zone-widget {
+	margin: 0 0 20px;
+	clear: both;
+}
+
+// Micro Clearfix
+// --------------
+
+// From CSS Wizardry' 'Inuit CSS' GitHub repository:
+// https://github.com/csswizardry/inuit.css/blob/master/generic/_clearfix.scss
+// Based on:
+// Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+
+.clearfix {
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
