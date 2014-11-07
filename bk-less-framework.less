@@ -1,9 +1,10 @@
-// ----------------------------
+// -----------------------------
 // BaseKit LESS Framework: v1.0
-// ----------------------------
+// -----------------------------
 
+// -----------------------------
 // Core Import
-// -----------
+// -----------------------------
 
 // Reset: Normalize & Typeset
 @import "core/reset/reset.less"; 
@@ -20,22 +21,48 @@
 @import "core/print.less";
 
 
+
+
+// -----------------------------
 // Widgets Import
-// --------------
+// -----------------------------
 
 @import "widgets/widgets.less";
 
-// Buttons: Main, PayPayl, Dropbox, Tweet, Click to Call
+// Basic: Logo, Company Name, Navigation, Feature (1-4)
+@import "widgets/logo.less";
+@import "widgets/company-name.less";
+@import "widgets/navigation.less";
+@import "widgets/feature.less";
+
+// Media: Images, Gallery, Slideshow (5-7)
+@import "widgets/image.less";
+@import "widgets/gallery.less";
+@import "widgets/slideshow.less";
+
+// Buttons: Standard, Tweet, Dropbox, Click to Call, PayPal (8.1 - 8.5)
 @import "widgets/buttons.less";
 
+// Social: Social Icons, Twitter Feed (11 - 12)
+@import "widgets/social-icons.less";
+@import "widgets/twitter-feed.less";
+
+// Other: Divider, Profile
 @import "widgets/divider.less";
-@import "widgets/feature.less";
-@import "widgets/gallery.less";
-@import "widgets/image.less";
-@import "widgets/widgets.less";
-@import "widgets/navigation.less";
-@import "widgets/slideshow.less";
-@import "widgets/twitter.less";
+@import "widgets/profile.less";
+
 @import "widgets/yelp.less";
 @import "widgets/youtube.less";
+
+
+
+
+// -----------------------------
+// Plugins Import
+// -----------------------------
+
+@import "plugins/plugin-menu.less"; // Menu
+@import "plugins/plugin-blog.less"; // Blog
+@import "plugins/plugin-ecommerce.less"; // Ecommerce
+
 

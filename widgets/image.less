@@ -2,26 +2,40 @@
 // WIDGETS: Image
 // -------------------------
 
-// Default Image Styles
-img {
-    max-width: 100%;
-    a {
-        border: 0;
-    }
+// Element Resets
+figure,
+.figure,
+figcaption { 
+	margin: 0;
 }
 
-// Image Widget
-.image {
-	// Element Resets
-	figure {
-	    margin: 0;
-	}
-	// Image Captions
-	.image-title,
-	.image-description {
-	    display: block;
-	    // Gives title and description paragraph styling
-    	.paragraph;
+
+// Image Captions (Gallery, Slideshow)
+// -----------------------------------
+
+.image-title,
+.image-description {
+    display: block;
+    // Gives title and description paragraph styling
+	.paragraph;
+}
+
+// Image Link
+.image-link {
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	&:hover { 
+		// Removes underline from image link
+		text-decoration: none;
 	}
 }
+
+// Post Image
+// ----------
+
+.blog-post-list__image {
+	max-height: 300px;
+}
+
 

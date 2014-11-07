@@ -2,36 +2,42 @@
 // WIDGETS: Slideshow
 // -------------------------
 
-.slideshow {
-	// Element Resets
-    ul { 
-        margin: 0;
-        list-style: none;
-    }
-    figure { margin: 0; }
+// Element Resets
+.slides-list,
+.pagination-list { 
+    margin: 0;
+    list-style: none;
+} 
 
-    // Slide Item
-    .slide-item {
-        display: none;
-        // Current Item
-        &.current {
-        	display: list-item;
-        }
-    }
 
-    // Image Captions
-    .image-title,
-    .image-description {
-        display: block;
-    }
+// Slide Item
+// ----------
 
-    // Pagination
-    .pagination-button {
-        width: 10px;
-        height: 10px;
-        padding: 0;
-        &.selected {
-            background-color: @color-swatch2;
-        }
+.slide-item {
+    display: none;
+    // Current Item
+    &.current {
+        display: list-item;
     }
 }
+
+
+// Slideshow Controls
+// ------------------
+
+// Pagination
+// ----------
+
+.slideshow__pagination-item {
+    display: inline-block;
+}
+.slideshow__pagination-item .pagination-button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+}
+// Selected Item
+.pagination-item.selected .pagination-button {
+    background-color: @color-swatch2;
+}
+

@@ -1,5 +1,5 @@
 // -------------------------
-// WIDGETS: Multiple Buttons
+// WIDGETS: Buttons
 // -------------------------
 
 // ------------------
@@ -17,16 +17,14 @@
 // 1. #Main Button
 // ---------------------
 
-button,
-.button {   
+button, .button {  
+    display: inline-block; 
     // Button Styles
     padding: 4px 12px;
     border: 0;
-    -webkit-font-smoothing: antialiased;
     -webkit-user-select: none; 
     -moz-user-select: none;    
     -ms-user-select: none; 
-
     // Font Styles
     font-family: @font-swatch7-font-family;
     font-weight: @font-swatch7-font-weight;
@@ -37,21 +35,28 @@ button,
     background-color: @font-swatch7-background-color;
     &:hover {
         background-color: @font-swatch7-background-color-hover;
+        text-decoration: none;
     }
 }
+
+
 
 
 // ---------------------
 // 2. #PayPal Button
 // ---------------------
 
+.paypal-button form { background-color: transparent; }
+
+
+
 
 // ---------------------
 // 3. #Dropbox Button
 // ---------------------
 
-.dropbox button,
-.dropbox span {
+.dropbox-button__button,
+.dropbox-button__label {
     display: inline-block; // Displays button & label inline
 }
 
@@ -60,17 +65,15 @@ button,
 // 4. #Tweet Button
 // ---------------------
 
-.tweet a {
-    padding: 9px 12px;
-    text-decoration: none;
-}
+
+
 
 
 // ------------------------
 // 5. #Click to Call Button
 // ------------------------
 
-.clicktocall a {
+.phone-number-link {
     @media @mobile {
         // Applies button styles at mobile
         .button;

@@ -1,15 +1,16 @@
-// -------------------------
+// -----------------------------
 // CORE: Typography
-// -------------------------
+// -----------------------------
 
-// ------------------
+// -----------------------------
 // #Table of Contents
-// ------------------
+// -----------------------------
 
 // 1. #HEADINGS (H1 - H4, P)
 // 2. #STANDARD LINK
 // 3. #BLOCKQUOTE
 // 4. #COMPANY NAME
+// 5. #TABLES
 
 
 // ---------------------------
@@ -28,7 +29,7 @@ body {
 }
 
 // Heading 1
-h1, .heading1 {
+h1, .heading--1 {
     font-family: @font-swatch1-font-family;
     font-weight: @font-swatch1-font-weight;
     color: @font-swatch1-color;
@@ -38,7 +39,7 @@ h1, .heading1 {
 }
 
 // Heading 2
-h2, .heading2 {
+h2, .heading--2 {
     font-family: @font-swatch2-font-family;
     font-size: @font-swatch2-font-size;
     font-weight: @font-swatch2-font-weight;
@@ -48,7 +49,7 @@ h2, .heading2 {
 }
 
 // Heading 3
-h3, .heading3 {
+h3, .heading--3 {
     font-family: @font-swatch3-font-family;
     font-size: @font-swatch3-font-size;
     font-weight: @font-swatch3-font-weight;
@@ -58,7 +59,7 @@ h3, .heading3 {
 }
 
 // Heading 4
-h1, .heading4 {
+h4, .heading--4 {
     font-family: @font-swatch4-font-family;
     font-size: @font-swatch4-font-size;
     font-weight: @font-swatch4-font-weight;
@@ -83,6 +84,16 @@ h1, h2, h3, h4, p {
     padding-bottom: 10px;
 }
 
+// Typography Font Styles
+.justifyitalic {
+    font-style: italic;
+}
+.justifybold {
+    font-weight: bold;
+}
+
+
+
 
 // ----------------------
 // 2. #Standard Text Link
@@ -96,28 +107,31 @@ a {
     }
 }
 
+
+
+
+
 // ---------------------
 // 3. #Blockquote
 // ---------------------
 
 blockquote {
+    margin: 0;
     &:before {
         content:open-quote;
-        left: 0;
-        top: 22px;
-        font-family: georgia;
-        color: lighten(@color-swatch5,10%);
-    }
-    &:after {
-        content: no-close-quote;
+        font-family: georgia, sans-serif;
+        line-height: @font-swatch5-line-height;
     }
 }
+
+
+
 
 // ---------------------
 // 4. #Company Name
 // ---------------------
 
-.companyname a {
+.company-link {
     font-family: @font-swatch10-font-family;
     font-size: @font-swatch10-font-size;
     font-weight: @font-swatch1-font-weight;
@@ -125,3 +139,13 @@ blockquote {
     line-height: @font-swatch10-line-height;
     letter-spacing: @font-swatch10-letter-spacing;
 }
+
+
+
+
+// ---------------------
+// 5. #Tables
+// ---------------------
+
+code, pre, th, td { color: @font-swatch4-color; }
+

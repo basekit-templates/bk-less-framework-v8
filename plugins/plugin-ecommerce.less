@@ -1,0 +1,331 @@
+// -----------------------------
+// PLUGINS: Ecommerce
+// -----------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #ELEMENT DEFAULTS
+// 2. #SINGLE PRODUCT
+// 3. #PRODUCT LIST
+// 4. #BASKET WIDGET
+// 5. #BASKET SUMMARY
+// 6. #ECOMMERCE IMAGES
+
+
+// -------------------------------
+// 1. #Element Defaults 
+// -------------------------------
+
+// Remove list margin
+.product-list,
+.ecom-product-image-list,
+.basket-list,
+.categories-list,
+.product-gallery {
+	margin: 0;
+	list-style: none;
+}
+// Add bottom margin
+.basket-item,
+.summary-table { 
+	margin: 0 0 20px;
+}
+.basket-item:last-child { margin-bottom: 0; }
+
+
+// Typography (Removes padding)
+.item-quantity,
+.basket-item-price,
+.summary-item-title,
+.summary-item-price,
+.summary-item-total,
+.order-total,
+.summary-item-price-title,
+.summary-item-total-title,
+.product-category,
+.tags-title {
+	padding-bottom: 0;
+}
+
+
+
+
+
+// -------------------------------
+// 2. #Single Product
+// -------------------------------
+
+.product__gallery-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+}
+
+// Product Image
+.image--current.product__image { max-height: 300px }
+
+.product-gallery {
+    margin: 20px 0;
+}
+
+// Gallery Item
+.product__gallery-item:hover { cursor: pointer; }
+
+
+
+
+
+// -------------------------------
+// 3. #Product List
+// -------------------------------
+
+// Product Filters
+// ---------------
+
+.product-listing__form-group {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 10px;
+}
+
+// Submit Button
+.input--search.product-listing__input { height: 36px; }
+
+// Listing Order (Showing 'x' products)
+.listing-order { padding: 20px 0; }
+
+
+// Product List Pagination
+// -----------------------
+
+.product-listing__pagination-item { display: inline-block; }
+
+
+
+
+// -------------------------------
+// 4. #Basket Widget
+// -------------------------------
+
+// Basekt Toggle
+.basket-toggle { margin-bottom: 20px; }
+
+// Basket Total
+.basket-total { padding: 20px 0; }
+
+
+
+
+// -------------------------------
+// 5. #Basket Summary
+// -------------------------------
+
+
+// Basic Cell Settings
+// -------------------
+
+// Default table header & table data spacing
+.basket-summary__summary-table {
+    th, td {
+        padding: 12px;
+    }
+}
+
+
+// Table Cells
+// -----------
+
+// Table Cell
+.basket-summary__cell { 
+	vertical-align: middle;
+    border-radius: 0;
+}
+
+// Column: Image
+.cell--image.basket-summary__cell {
+	width: 25%;
+}
+// Column: Title
+.cell--title.basket-summary__cell {
+	width: 30%;
+}
+// Column: Quantity
+.cell--quantity.basket-summary__cell {
+	width: 15%;
+}
+// Column: Price & Total
+.cell--price.basket-summary__cell,
+.cell--total.basket-summary__cell {
+	width: 10%;
+}
+
+
+// Table at mobile
+// ---------------
+
+@media @mobile  {
+
+    // Use flexbox to display each row 100%
+    .basket-summary__table-row { 
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    // Table Row
+    .basket-summary__table-row { 
+        border-bottom: 1px solid darken(@color-swatch1,10%);
+    }
+
+     // Hide other header cells except 'item'
+    .cell--header.basket-summary__cell:not(:first-child) {
+        display: none;
+    }
+
+    // Increase all cell widths
+    .cell--image.basket-summary__cell,
+    .cell--title.basket-summary__cell,
+    .cell--quantity.basket-summary__cell,
+    .cell--price.basket-summary__cell,
+    .cell--total.basket-summary__cell {
+        width: 100%;
+    }
+
+    // Remove cell borders
+    .basket-summary__cell,
+    .cell--header.basket-summary__cell {
+        border: 0;
+    }
+
+    // Add border-top to 'price' and 'total' cells
+    .cell--price.basket-summary__cell,
+    .cell--total.basket-summary__cell {
+        border-top: 1px solid darken(@color-swatch1,10%);
+    }
+
+    // Remove vertical padding from 'title' cell
+    .cell--title.basket-summary__cell {
+    	padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+
+// Basket Quantity
+// ---------------
+
+// Quantity Inputs 
+.quantity-wrap input { 
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 2px 0;
+    text-align: center;
+}
+
+// Increase 'number' input width
+input[type=number].quantity-field { width: 40px; }
+
+// Remove Number Input Spinners
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+
+// Summary Item Price Titles
+// -------------------------
+
+// Display inline at mobile
+.summary-item-price,
+.summary-item-total {
+    @media @mobile {
+        display: inline-block;
+    }
+}
+
+// Hide at desktop, display at mobile
+.summary-item-price-title,
+.summary-item-total-title {
+    display: none;
+    @media @mobile {
+        display: inline-block;
+    }
+}
+
+.basket-body {
+    display: none;
+}
+.basket-body.open-basket {
+    display: block;
+}
+
+
+// -------------------------------
+// 6. #Ecommerce Images
+// -------------------------------
+
+// Image centering technique
+// -------------------------
+
+// Surrounding image divs 
+.product-listing__image-link,
+.product__image-list {
+    width: 100%;
+    background-color: darken(@color-swatch1,5%);
+    overflow: hidden; // Stops large images overflowing
+}
+
+// Image Element
+.product-listing__image,
+.product__image,
+.image--thumb.product__image {
+    vertical-align: middle; // Vertically centers image
+    max-width: 100%; // Allows image to fill the width or height
+    max-height: 100%;
+}
+
+// Product List
+// ------------
+
+// Sets height & alignment
+.product-listing__image-link {
+    height: 200px;
+    line-height: 200px; // Line height matches div height
+    text-align: center;
+}
+
+
+// Single Product Thumbnails
+// -------------------------
+
+.product__image-list {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    @media @mobile {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+.product__gallery-item {
+    background-color: darken(@color-swatch1,5%);
+    overflow: hidden; // Stops large images overflowing
+}
+
+

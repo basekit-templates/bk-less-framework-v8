@@ -3,8 +3,13 @@
 // -------------------------
 
 // Navigation Text
-.navigation-item,
-.navigation-item a {
+// ---------------
+
+.navigation-item .item-name {
+    display: block;
+    padding: 14px;
+    text-decoration: none;
+    // Font Styles
     font-family: @font-swatch6-font-family;
     font-size: @font-swatch6-font-size;
     font-weight: @font-swatch6-font-weight;
@@ -20,49 +25,27 @@
 // Navigation Layout
 // -----------------
 
-.navigation {
-    ul {
-        width: 100%;
-        z-index: 9999;
-        padding: 0;
-        margin-left: 0;
-        background: darken(@color-swatch1,5%);
-        list-style: none;
-    }
-    // Menu List Item
-    li {
-        position: relative;
-        display: inline-block;
-    }
-    a, span {
-        display: inline-block;
-        width: 100%;
-        padding: 10px 15px;
-        text-decoration: none;
-        line-height: inherit;
-        &:hover {
-            color: @font-swatch6-color-hover;
-        }
-    }
-    // Dropdown Menu
-    li ul {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        min-width: 100%;
-        white-space: nowrap;
-    }
-    // Display Dropdown Menu
-    li:hover ul {
-        display: block;
-        li {
-            display: list-item;
-        }
-    }
+// Navigation Body
+.navigation-body {
+    .clearfix;
 }
 
-// Folder Item
+// Navigation List
+.navigation-list {
+    width: 100%;
+    z-index: 9999;
+    padding: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+// Navigation List Item
+.navigation-item {
+    position: relative;
+    display: inline-block;
+}
+
+// Folder Item Parent
 .item-name--parent:after {
     display: inline-block;
     vertical-align: middle;
@@ -71,3 +54,24 @@
     border: 5px solid transparent;
     border-top-color: @color-swatch6;
 }
+
+// Dropdown Menu
+.navigation-list--children {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    background-color: @color-swatch1;
+    white-space: nowrap;
+}
+// Display Dropdown Menu
+.navigation-item:hover .navigation-list--children {
+    display: block;
+}
+.navigation-item--child {
+    display: list-item;
+}
+
+
+
