@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     
     // This is the production version of bkb. The
     // one that will get released with BaseKit
-    grunt.file.write('bkl.less', buildStr);
+    grunt.file.write('bk-less-framework.less', buildStr);
         grunt.task.run('lesslint');
   });
 };

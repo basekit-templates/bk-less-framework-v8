@@ -92,12 +92,13 @@
 @siteBackgroundRepeat:no-repeat;
 
 
-// ----------------------------
+// -----------------------------
 // BaseKit LESS Framework: v1.0
-// ----------------------------
+// -----------------------------
 
+// -----------------------------
 // Core Import
-// -----------
+// -----------------------------
 
 // Reset: Normalize & Typeset
 // --------------------
@@ -809,7 +810,6 @@ body {
 	font: 16px / 24px sans-serif;
 	font-weight: 400;
 	color: #333;
-	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizelegibility;
 }
 
@@ -835,81 +835,101 @@ body {
 
 @font-face {
     font-family: 'FontAwesome';
-    src: image('/bkbootstrap/core/typography/icons/fontawesome-webfont.eot?v=4.2.0');
-    src: image('/bkbootstrap/core/typography/icons/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
-       image('/bkbootstrap/core/typography/icons/fontawesome-webfont.woff?v=4.2.0') format('woff'), 
-       image('/bkbootstrap/core/typography/icons/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), 
-       image('/bkbootstrap/core/typography/icons/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?v=4.2.0');
+    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
+        url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), 
+        url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), 
+        url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 // Fontawesome
-[class*="icon"]:before {
+.icon:before,
+.icon:after {
     font-family: 'FontAwesome', sans-serif;
-    margin-right: 5px;
 }
+.icon:before { margin-right: 5px; }
+.icon:after  { margin-left:  5px; }
+
 
 // Widget Icons
 // ------------
 
 // Twitter
-.icon--twitter:before {
-    content: "\f09a";
-}
+.icon--twitter:before { content: "\f099"; }
 
 // Facebook
-.icon--facebook:before {
-    content: "\f099";
-}
+.icon--facebook:before { content: "\f09a"; }
 
 // Facebook
-.icon--youtube:before {
-    content: "\f167";
-}
+.icon--youtube:before { content: "\f167"; }
 
 // Google+
-.icon--googleplus:before {
-    content: "\f0d5";
-}
+.icon--googleplus:before { content: "\f0d5"; }
 
 // RSS
-.icon--rss:before {
-    content: "\f09e";
-}
+.icon--rss:before { content: "\f09e"; }
 
 // LinkedIn
-.icon--linkedin:before {
-    content: "\f0e1";
-}
+.icon--linkedin:before { content: "\f0e1"; }
 
 // Dropbox
-.icon--dropbox:before {
-    content: "\f16b";
-}
+.icon--dropbox:before { content: "\f16b"; }
 
 // PayPal
-.icon--paypal:before {
-    content: "\f16b";
-}
+.icon--paypal:before { content: "\f16b"; }
 
 // Phone (Click to Call)
-.icon--phone:before {
-    content: "\f095";
+.icon--phone:before { content: "\f095"; }
+
+
+// Slideshow Icons
+// ---------------
+
+// Previous
+.icon--previous:before { content: "\f053"; }
+
+// Next
+.icon--next:after    { content: "\f054"; }
+
+// Pause
+.icon--pause:before  { content: "\f04c"; }
+
+// Pause
+.icon--play:before   { content: "\f04b"; }
+
+
+// Plugin Icons
+// ------------
+
+.icon--basket:before     { content: "\f07a"; }
+.icon--add:before        { content: "\f067"; }
+
+
+// Misc Icons
+// ----------
+
+// Close, Remove
+.icon--remove:before,
+.icon--close:before {
+    content: "\f00d";
 }
 
-// -------------------------
-// CORE: Typography
-// -------------------------
 
-// ------------------
+// -----------------------------
+// CORE: Typography
+// -----------------------------
+
+// -----------------------------
 // #Table of Contents
-// ------------------
+// -----------------------------
 
 // 1. #HEADINGS (H1 - H4, P)
 // 2. #STANDARD LINK
 // 3. #BLOCKQUOTE
 // 4. #COMPANY NAME
+// 5. #TABLES
 
 
 // ---------------------------
@@ -928,7 +948,7 @@ body {
 }
 
 // Heading 1
-h1, .heading1 {
+h1, .heading--1 {
     font-family: @font-swatch1-font-family;
     font-weight: @font-swatch1-font-weight;
     color: @font-swatch1-color;
@@ -938,7 +958,7 @@ h1, .heading1 {
 }
 
 // Heading 2
-h2, .heading2 {
+h2, .heading--2 {
     font-family: @font-swatch2-font-family;
     font-size: @font-swatch2-font-size;
     font-weight: @font-swatch2-font-weight;
@@ -948,7 +968,7 @@ h2, .heading2 {
 }
 
 // Heading 3
-h3, .heading3 {
+h3, .heading--3 {
     font-family: @font-swatch3-font-family;
     font-size: @font-swatch3-font-size;
     font-weight: @font-swatch3-font-weight;
@@ -958,7 +978,7 @@ h3, .heading3 {
 }
 
 // Heading 4
-h1, .heading4 {
+h4, .heading--4 {
     font-family: @font-swatch4-font-family;
     font-size: @font-swatch4-font-size;
     font-weight: @font-swatch4-font-weight;
@@ -983,6 +1003,16 @@ h1, h2, h3, h4, p {
     padding-bottom: 10px;
 }
 
+// Typography Font Styles
+.justifyitalic {
+    font-style: italic;
+}
+.justifybold {
+    font-weight: bold;
+}
+
+
+
 
 // ----------------------
 // 2. #Standard Text Link
@@ -996,28 +1026,31 @@ a {
     }
 }
 
+
+
+
+
 // ---------------------
 // 3. #Blockquote
 // ---------------------
 
 blockquote {
+    margin: 0;
     &:before {
         content:open-quote;
-        left: 0;
-        top: 22px;
-        font-family: georgia;
-        color: lighten(@color-swatch5,10%);
-    }
-    &:after {
-        content: no-close-quote;
+        font-family: georgia, sans-serif;
+        line-height: @font-swatch5-line-height;
     }
 }
+
+
+
 
 // ---------------------
 // 4. #Company Name
 // ---------------------
 
-.companyname a {
+.company-link {
     font-family: @font-swatch10-font-family;
     font-size: @font-swatch10-font-size;
     font-weight: @font-swatch1-font-weight;
@@ -1027,59 +1060,44 @@ blockquote {
 }
 
 
+
+
+// ---------------------
+// 5. #Tables
+// ---------------------
+
+code, pre, th, td { color: @font-swatch4-color; }
+
+
+
 // -------------------------
 // CORE: Alignment Styles
 // -------------------------
 
-.widget-align-center,
-.align-center,
-div.align-center,
-a img.align-center {
-    display: block;
-    margin: 0 auto 0 auto;
+// Align Center
+.align--center,
+.justify--center {
     text-align: center;
 }
 
-.widget-align-right,
-.align-right,
-div.align-right,
-a img.align-right {
-    float: right;
-    text-align: right;
-}
-
-.widget-align-left,
-.align-left,
-div.align-left,
-a img.align-left {
-    float: left;
+// Align Left
+.align--left,
+.justify--left {
     text-align: left;
 }
 
-/* ALIGNMENTS */
-* {
-    &.justifyleft {
-        text-align: left;
-    }
-    &.justifycenter {
-        text-align: center;
-    }
-    &.justifyright {
-        text-align: right;
-    }
-    &.justifyfull {
-        text-align: justify;
-    }
-
-    /* FONT STYLES */
-
-    &.justifyitalic {
-        font-style: italic;
-    }
-    &.justifybold {
-        font-weight: bold;
-    }
+// Align Right
+.align--right,
+.justify--right {
+    text-align: right;
 }
+
+// Justify
+.justify--full {
+    text-align: justify;
+}
+
+
 // -------------------------
 // CORE: Columns
 // -------------------------
@@ -1516,7 +1534,7 @@ a img.align-left {
 	}
 }
 // -------------------------
-// CORE: Generic Forms
+// CORE: Forms
 // -------------------------
 
 // Fieldset
@@ -1527,9 +1545,7 @@ fieldset {
 }
 
 // Form Group
-.form-group {
-	margin-bottom: 10px;
-}
+.form-group { margin-bottom: 10px; }
 
 // Legend
 legend { display: block }
@@ -1537,29 +1553,48 @@ legend { display: block }
 // Label
 label {
 	display: block;
-    margin: 5px 0;
+    margin: 0 0 5px;
 }
 
-// Inputs & Textarea
-input[type="text"],
-input[type="url"],
-input[type="tel"],
-input[type="number"],
+// Selects
+select {
+    height: 36px;
+    outline: none;
+    border: 1px solid darken(@color-swatch1,15%);
+    border-radius: 0;
+    background-color: @color-swatch1;
+    font-size: 12px;
+    text-indent: 0;
+    &:hover, &:focus {
+        background-color: @color-swatch1;
+        cursor: pointer;
+	}
+}
+
+
+// Inputs: Text
+// ------------
+
+input[type="search"],
 input[type="email"],
-textarea {
+input[type="password"],
+textarea,
+.input--single-line {
 	width: 100%;
 	padding: 6px 10px;
-	border: 1px solid #ccc;
-	line-height: inherit;
+	border: 1px solid #ddd;
+	// line-height: inherit;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	&:focus {
 		border-color: #129fea;
 		box-shadow: inset 0 1px 3px #ddd;
 		outline: 0;
 	}
 }
-input[type="submit"] {
-	width: auto;
-}
+
+// Textarea
 textarea {
 	resize: vertical;
 	min-height: 100px;
@@ -1870,10 +1905,120 @@ body:after {
     .extended-print-mixin;
 }
 
+// -------------------------
+// CORE: Messages
+// -------------------------
+
+@message-padding: 0.7em;
+@message-bg-light: fade(@font-swatch5-color, 10%);
+@message-bg-dark: fade(@font-swatch5-color, 15%);
+
+.message {
+	position: relative;
+	clear: both;
+	padding: @message-padding;
+	padding-left: (@message-padding + (@message-padding * 2.8));
+	margin: 1em auto;
+	max-width: 1000px;
+	font-size: 16px;
+	line-height: 1.5;
+	color: @font-swatch5-color;
+	background-color: contrast(@color-swatch1, @message-bg-light, @message-bg-dark);
+	@media @mobile {
+		font-size: 14px;
+	}
+
+	&:before {
+		font-family: 'FontAwesome', sans-serif;
+		display: block;
+		width: (@message-padding * 2.8);
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		text-align: center;
+		padding-top: (@message-padding * 0.8);
+	}
+	h3, p {
+		margin: 0;
+		padding: 0;
+		line-height: 1.5;
+		color: @font-swatch5-color;
+		font-size: 16px;
+		@media @mobile {
+			font-size: 14px;
+		}
+	}
+	strong {
+		font-weight: bold;
+	}
+	p+p {
+		margin-top: (@message-padding * 0.5);
+	}
+}
 
 
+// Error
+.message-error {
+	&:before {
+		content: "\f071"; // triangle
+		color: #EA0000;
+		background-color: #F6E6E6;
+	}
+}
+
+// Warning
+.message-warning {
+	&:before {
+		content: "\f071"; // triangle
+		color: #73640A;
+		background-color: #FFFACB;
+	}
+}
+
+// Information
+.message-information {
+	&:before {
+		content: "\f05a"; // circled i
+		color: #0B4E67;
+		background-color: #E6F5F6;
+	}
+}
+
+// Success
+.message-success {
+	&:before {
+		content: "\f00c"; // check
+		color: #305D01;
+		background-color: #EEF7C0;
+	}
+}
+
+// Not Found
+.message-not-found {
+	&:before {
+		content: "\f002"; // magnifying glass
+		color: #0B4E67;
+		background-color: #E6F5F6;
+	}
+}
+
+// Empty State
+.message-empty {
+	&:before {
+		content: "\f040"; // pencil
+		color: #858585;
+		background-color: #F1F1F1;
+	}
+}
+
+
+
+
+
+// -----------------------------
 // Widgets Import
-// --------------
+// -----------------------------
 
 // -----------------------
 // WIDGETS: General Widget
@@ -1889,6 +2034,7 @@ body:after {
 	margin: 0 0 20px;
 	clear: both;
 }
+
 
 // Micro Clearfix
 // --------------
@@ -1906,9 +2052,230 @@ body:after {
     }
 }
 
-// Buttons: Main, PayPayl, Dropbox, Tweet, Click to Call
+// Basic: Logo, Company Name, Navigation, Feature (1-4)
+// ---------------------
+// WIDGETS: Logo
+// ---------------------
+
+// No styles here...
+// ---------------------
+// WIDGETS: Company Name
+// ---------------------
+
+// No styles here...
 // -------------------------
-// WIDGETS: Multiple Buttons
+// WIDGETS: Navigation
+// -------------------------
+
+// Navigation Text
+// ---------------
+
+.navigation-item .item-name {
+    display: block;
+    padding: 14px;
+    text-decoration: none;
+    // Font Styles
+    font-family: @font-swatch6-font-family;
+    font-size: @font-swatch6-font-size;
+    font-weight: @font-swatch6-font-weight;
+    line-height: @font-swatch6-line-height;
+    color: @font-swatch6-color;
+    letter-spacing: @font-swatch6-letter-spacing;
+    &:hover {
+        color: @font-swatch6-color-hover;
+        cursor: pointer;
+    }
+}
+
+// Navigation Layout
+// -----------------
+
+// Navigation Body
+.navigation-body {
+    .clearfix;
+}
+
+// Navigation List
+.navigation-list {
+    width: 100%;
+    z-index: 9999;
+    padding: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+// Navigation List Item
+.navigation-item {
+    position: relative;
+    display: inline-block;
+}
+
+// Dropdown Menu
+.navigation-list--children {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 100%;
+    background-color: @color-swatch1;
+    white-space: nowrap;
+}
+// Display Dropdown Menu
+.navigation-item:hover .navigation-list--children {
+    display: block;
+}
+.navigation-item--child {
+    display: list-item;
+}
+
+
+
+
+// ---------------------
+// WIDGETS: Feature
+// ---------------------
+
+// Feature Content Wrap
+.feature-widget__content-wrap {
+	padding: 30px;
+}
+// Feature Headline
+.feature-widget__headline {
+	font-family: @font-swatch8-font-family;
+	font-size: @font-swatch8-font-size;
+	font-weight: @font-swatch8-font-weight;
+	line-height: @font-swatch8-line-height;
+	color: @font-swatch8-color;
+	letter-spacing: @font-swatch8-letter-spacing;
+}
+// Feature Strapline
+.feature-widget__strapline {
+	font-family: @font-swatch9-font-family;
+	font-size: @font-swatch9-font-size;
+	font-weight: @font-swatch9-font-weight;
+	line-height: @font-swatch9-line-height;
+	color: @font-swatch9-color;
+	letter-spacing: @font-swatch9-letter-spacing;
+}
+
+// Feature Button
+.feature-widget__button {
+	padding: 9px 12px;
+    text-decoration: none;
+    &:hover {
+    	text-decoration: none;
+    }
+} 
+
+
+// Media: Images, Gallery, Slideshow (5-7)
+// -------------------------
+// WIDGETS: Image
+// -------------------------
+
+// Element Resets
+figure,
+.figure,
+figcaption { 
+	margin: 0;
+}
+
+
+// Image Captions (Gallery, Slideshow)
+// -----------------------------------
+
+.image-title,
+.image-description {
+    display: block;
+    // Gives title and description paragraph styling
+	.paragraph;
+}
+
+// Image Link
+.image-link {
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	&:hover { 
+		// Removes underline from image link
+		text-decoration: none;
+	}
+}
+
+// Post Image
+// ----------
+
+.blog-post-list__image {
+	max-height: 300px;
+}
+
+
+
+// -------------------------
+// WIDGETS: Image Gallery
+// -------------------------
+
+// Element Resets
+// --------------
+
+.gallery-list {
+    margin: 0;
+    list-style: none;
+}
+// -------------------------
+// WIDGETS: Slideshow
+// -------------------------
+
+// Element Resets
+.slides-list,
+.pagination-list { 
+    margin: 0;
+    list-style: none;
+} 
+
+.slideshow-controls {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+
+// Slide Item
+// ----------
+
+.slide-item {
+    display: none;
+    // Current Item
+    &.current {
+        display: list-item;
+    }
+}
+
+
+// Slideshow Controls
+// ------------------
+
+// Pagination
+// ----------
+
+.slideshow__pagination-item {
+    display: inline-block;
+}
+.slideshow__pagination-item .pagination-button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+}
+// Selected Item
+.pagination-item.selected .pagination-button {
+    background-color: @color-swatch2;
+}
+
+
+
+// Buttons: Standard, Tweet, Dropbox, Click to Call, PayPal (8.1 - 8.5)
+// -------------------------
+// WIDGETS: Buttons
 // -------------------------
 
 // ------------------
@@ -1926,16 +2293,14 @@ body:after {
 // 1. #Main Button
 // ---------------------
 
-button,
-.button {   
+button, .button {  
+    display: inline-block; 
     // Button Styles
     padding: 4px 12px;
     border: 0;
-    -webkit-font-smoothing: antialiased;
     -webkit-user-select: none; 
     -moz-user-select: none;    
     -ms-user-select: none; 
-
     // Font Styles
     font-family: @font-swatch7-font-family;
     font-weight: @font-swatch7-font-weight;
@@ -1946,21 +2311,28 @@ button,
     background-color: @font-swatch7-background-color;
     &:hover {
         background-color: @font-swatch7-background-color-hover;
+        text-decoration: none;
     }
 }
+
+
 
 
 // ---------------------
 // 2. #PayPal Button
 // ---------------------
 
+.paypal-button form { background-color: transparent; }
+
+
+
 
 // ---------------------
 // 3. #Dropbox Button
 // ---------------------
 
-.dropbox button,
-.dropbox span {
+.dropbox-button__button,
+.dropbox-button__label {
     display: inline-block; // Displays button & label inline
 }
 
@@ -1969,17 +2341,15 @@ button,
 // 4. #Tweet Button
 // ---------------------
 
-.tweet a {
-    padding: 9px 12px;
-    text-decoration: none;
-}
+
+
 
 
 // ------------------------
 // 5. #Click to Call Button
 // ------------------------
 
-.clicktocall a {
+.phone-number-link {
     @media @mobile {
         // Applies button styles at mobile
         .button;
@@ -1991,6 +2361,53 @@ button,
 
 
 
+// Social: Social Icons, Twitter Feed (11 - 12)
+// ----------------------
+// WIDGETS: Social Links
+// ----------------------
+
+// Social List
+.social-list { margin: 0; }
+
+// Social Item
+.social-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+// Social Link
+.social-link { -webkit-font-smoothing: antialiased; }
+// ---------------------
+// WIDGETS: Twitter Feed
+// ---------------------
+
+.tweet-list {
+    margin: 0;
+    list-style: none;
+}
+
+// Account Name
+.account-link {
+	font-family: @font-swatch3-font-family;
+    font-size: @font-swatch3-font-size;
+    font-weight: @font-swatch3-font-weight;
+    color: @font-swatch3-color;
+    line-height: @font-swatch3-line-height;
+    letter-spacing: @font-swatch3-letter-spacing;
+}
+
+// Tweet List Items
+.tweet-item {
+	margin-bottom:  20px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// Avatar
+.avatar-link { display: block; }
+
+// Other: Divider, Profile
 // -------------------------
 // WIDGETS: Divider
 // -------------------------
@@ -2001,267 +2418,22 @@ hr.rule {
     border: none;
     background-color: @color-swatch3;
 }
-// ---------------------
-// WIDGETS: Feature
-// ---------------------
-
-.feature {
-	// Text Content Wrap
-	.content-wrap {
-		padding: 30px;
-	}
-	// Feature Headline
-	h2 {
-		font-family: @font-swatch8-font-family;
-		font-size: @font-swatch8-font-size;
-		font-weight: @font-swatch8-font-weight;
-		line-height: @font-swatch8-line-height;
-		color: @font-swatch8-color;
-		letter-spacing: @font-swatch8-letter-spacing;
-	}
-	// Feature Strapline
-	h3 {
-		font-family: @font-swatch9-font-family;
-		font-size: @font-swatch9-font-size;
-		font-weight: @font-swatch9-font-weight;
-		line-height: @font-swatch9-line-height;
-		color: @font-swatch9-color;
-		letter-spacing: @font-swatch9-letter-spacing;
-	}
-	// Feature Button
-	a {
-		padding: 9px 12px;
-	    text-decoration: none;
-	    &:hover {
-	    	text-decoration: none;
-	    }
-	} 
-}
 // -------------------------
-// WIDGETS: Image Gallery
+// WIDGETS: Profile
 // -------------------------
 
-.gallery {
-    // Element Resets
-    ul { 
-        margin: 0;
-        list-style: none;
-    }
-    figure { margin: 0; }
-    
-    // Image Captions
-    .image-title,
-    .image-description {
-        display: block;
-        // Gives title and description paragraph styling
-        .paragraph;
-    }
-    // Removes underline from image link
-    .image-link {
-        text-decoration: none;
-    }
-}
-// -------------------------
-// WIDGETS: Image
-// -------------------------
-
-// Default Image Styles
-img {
-    max-width: 100%;
-    a {
-        border: 0;
-    }
+// Typography (Removes padding)
+.address-line {
+	padding-bottom: 0;
 }
 
-// Image Widget
-.image {
-	// Element Resets
-	figure {
-	    margin: 0;
-	}
-	// Image Captions
-	.image-title,
-	.image-description {
-	    display: block;
-	    // Gives title and description paragraph styling
-    	.paragraph;
-	}
-}
-
-
-// -----------------------
-// WIDGETS: General Widget
-// -----------------------
-
-// Widget Positioning
-.widget {
-	position: relative;
-}
-
-// Zone Widget Spacing
-.widget--zone-widget {
-	margin: 0 0 20px;
-	clear: both;
-}
-
-// Micro Clearfix
-// --------------
-
-// From CSS Wizardry' 'Inuit CSS' GitHub repository:
-// https://github.com/csswizardry/inuit.css/blob/master/generic/_clearfix.scss
-// Based on:
-// Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
-
-.clearfix {
-    &:after{
-        content:"";
-        display:table;
-        clear:both;
-    }
-}
-// -------------------------
-// WIDGETS: Navigation
-// -------------------------
-
-// Navigation Text
-.navigation-item,
-.navigation-item a {
-    font-family: @font-swatch6-font-family;
-    font-size: @font-swatch6-font-size;
-    font-weight: @font-swatch6-font-weight;
-    line-height: @font-swatch6-line-height;
-    color: @font-swatch6-color;
-    letter-spacing: @font-swatch6-letter-spacing;
-    &:hover {
-        color: @font-swatch6-color-hover;
-        cursor: pointer;
-    }
-}
-
-// Navigation Layout
-// -----------------
-
-.navigation {
-    ul {
-        width: 100%;
-        z-index: 9999;
-        padding: 0;
-        margin-left: 0;
-        background: darken(@color-swatch1,5%);
-        list-style: none;
-    }
-    // Menu List Item
-    li {
-        position: relative;
-        display: inline-block;
-    }
-    a, span {
-        display: inline-block;
-        width: 100%;
-        padding: 10px 15px;
-        text-decoration: none;
-        line-height: inherit;
-        &:hover {
-            color: @font-swatch6-color-hover;
-        }
-    }
-    // Dropdown Menu
-    li ul {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        min-width: 100%;
-        white-space: nowrap;
-    }
-    // Display Dropdown Menu
-    li:hover ul {
-        display: block;
-        li {
-            display: list-item;
-        }
-    }
-}
-
-// Folder Item
-.item-name--parent:after {
-    display: inline-block;
-    vertical-align: middle;
-    content: "";
-    margin-left: 4px;
-    border: 5px solid transparent;
-    border-top-color: @color-swatch6;
-}
-
-// -------------------------
-// WIDGETS: Slideshow
-// -------------------------
-
-.slideshow {
-	// Element Resets
-    ul { 
-        margin: 0;
-        list-style: none;
-    }
-    figure { margin: 0; }
-
-    // Slide Item
-    .slide-item {
-        display: none;
-        // Current Item
-        &.current {
-        	display: list-item;
-        }
-    }
-
-    // Image Captions
-    .image-title,
-    .image-description {
-        display: block;
-    }
-
-    // Pagination
-    .pagination-button {
-        width: 10px;
-        height: 10px;
-        padding: 0;
-        &.selected {
-            background-color: @color-swatch2;
-        }
-    }
-}
-// ---------------------
-// WIDGETS: Twitter Feed
-// ---------------------
-
-.twitter-feed {
-	ul {
-        margin: 0;
-        list-style: none;
-    }
-	// Account Name
-	.account-link {
-		font-family: @font-swatch3-font-family;
-	    font-size: @font-swatch3-font-size;
-	    font-weight: @font-swatch3-font-weight;
-	    color: @font-swatch3-color;
-	    line-height: @font-swatch3-line-height;
-	    letter-spacing: @font-swatch3-letter-spacing;
-	}
-	// Tweet List Items
-	li {
-		margin: 0 0 20px;
-	}
-}
 // ---------------------
 // WIDGETS: Yelp
 // ---------------------
 
-.yelp-reviews {
-	ul {
-		list-style: none;
-		margin: 0;
-	}
+.yelpreview {
+	list-style: none;
+	margin: 0;
 }
 // ----------------------
 // WIDGETS: YouTube
@@ -2281,5 +2453,569 @@ img {
     width: 100%;
     height: 100%;
 }
+
+
+
+
+
+// -----------------------------
+// Plugins Import
+// -----------------------------
+
+// -----------------------------
+// PLUGINS: Menu
+// -----------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #ELEMENT DEFAULTS
+// 2. #MENU ITEMS
+// 3. #CSS COLUMN STRUCTURE
+// 4. #ITEM IMAGE CENTERING
+
+
+// -----------------------------
+// 1. #Menu: Element Defaults 
+// -----------------------------
+
+// Navigation List
+// ---------------
+
+.menu-list,
+.dietary-list { 
+	margin: 0;
+	list-style: none;
+}
+.menu-navigation-list { 
+	margin-left: 0;
+}
+
+
+// Element Spacing
+// ---------------
+
+// Menu Section
+.menu-section { margin: 0 0 20px; }
+
+
+// Typography (Removes padding)
+.section-title,
+.item-title,
+.item-subtitle,
+.item-price,
+.item-details { 
+	padding-bottom: 0; 
+}
+
+
+// -----------------------------
+// 2. #Menu: Menu Items
+// -----------------------------
+
+.menu-navigation-item,
+.dietary-item  {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+
+
+// ------------------------------
+// 3. #Menu: CSS Column Structure
+// ------------------------------
+
+// Applied to parent list, not subsection list 
+.menu-list:not(.menu-list--subsection) {
+	column-count: 2;
+	column-gap: 50px;
+	-moz-column-count: 2;
+	-moz-column-gap: 50px;
+	-webkit-column-count: 2;
+	-webkit-column-gap : 50px;
+	@media @tablet { 
+		column-count: 2;
+		column-gap: 60px;
+		-moz-column-count: 2;
+		-moz-column-gap: 60px;
+		-webkit-column-count: 2;
+		-webkit-column-gap : 60px;
+	}
+	@media @mobile { 
+		column-count: 1;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+	}
+}
+
+// Applied to 'li'
+.menu-item {
+	margin: 0 0 20px;
+	break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	-ms-column-break-inside: avoid;
+	-o-column-break-inside: avoid;
+	page-break-inside: avoid;
+  }
+  &.odd {
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3;
+	@media @tablet {
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;	
+	}
+	&.bk1-columns {
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+}
+
+
+
+
+// ------------------------------
+// 4. #Menu: Item Image Centering
+// ------------------------------
+
+.menu__image-link { display: inline; }
+
+// Item Image
+.item-image {
+	width: 100%;
+	height: 200px;
+	margin: 0 0 20px;
+	background-color: #f5f5f5;
+	line-height: 200px; // Line height matches div height
+	text-align: center; // Horizontally centers image
+	overflow: hidden; // Stops large images overflowing
+}
+// Menu Image Element
+.menu__image {
+	vertical-align: middle; // Vertically centers image
+	max-width: 100%; // Allows image to fill the width or height
+	max-height: 100%;
+}
+
+
+
+
+
+ // Menu
+// -----------------------------
+// PLUGINS: Blog
+// -----------------------------
+
+// -----------------------------
+// Blog: Element Defaults 
+// -----------------------------
+
+// Navigation List
+// ---------------
+
+.sharing-links,
+.tag-list,
+.pagination-numbers { 
+	margin: 0;
+	list-style: none;
+}
+.menu-navigation-list { 
+	margin-left: 0;
+}
+// Resets Post Image Height
+.post-image { 
+	font-size: 0;
+	line-height: 0;
+}
+
+
+// Element Spacing
+// ---------------
+
+// Typography (Removes padding)
+.section-title,
+.post-category { 
+	padding-bottom: 0; 
+}
+
+// Post Article
+.post-article {
+	margin-bottom: 60px;
+	&:last-child {
+		margin-bottom: 30px;
+	}
+}
+.post-content { margin: 0 0 20px; }
+.blog-post-list__timestamp { 
+	display: block;
+	padding: 10px 0 20px;
+}
+
+// Post Attributes
+.post-attributes { margin: 20px 0 10px; }
+
+// Footer Sharing Links
+.blog-post-list__network-item,
+.blog-post__network-item { 
+	margin-top: 10px;
+}
+
+// Blog Post List Buttons,
+// Sharing Item Buttons,
+// Tag Title,
+// Tag Item List,
+// Tag Item
+.blog-post-list__button,
+.blog-post__button,
+.tags-title,
+.tag-list,
+.tag-item,
+.blog-post-list__pagination-item { 
+	display: inline-block;
+}
+
+// Network Item
+.network-item { 
+	display: inline-block;
+	margin-right: 10px;
+}	
+ // Blog
+// -----------------------------
+// PLUGINS: Ecommerce
+// -----------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #ELEMENT DEFAULTS
+// 2. #SINGLE PRODUCT
+// 3. #PRODUCT LIST
+// 4. #BASKET WIDGET
+// 5. #BASKET SUMMARY
+// 6. #ECOMMERCE IMAGES
+
+
+// -------------------------------
+// 1. #Element Defaults 
+// -------------------------------
+
+// Remove list margin
+.product-list,
+.ecom-product-image-list,
+.basket-list,
+.categories-list,
+.product-gallery {
+	margin: 0;
+	list-style: none;
+}
+// Add bottom margin
+.basket-item,
+.summary-table { 
+	margin: 0 0 20px;
+}
+.basket-item:last-child { margin-bottom: 0; }
+
+
+// Typography (Removes padding)
+.item-quantity,
+.basket-item-price,
+.summary-item-title,
+.summary-item-price,
+.summary-item-total,
+.order-total,
+.summary-item-price-title,
+.summary-item-total-title,
+.product-category,
+.tags-title {
+	padding-bottom: 0;
+}
+
+
+
+
+
+// -------------------------------
+// 2. #Single Product
+// -------------------------------
+
+.product__gallery-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+}
+
+// Product Image
+.image--current.product__image { max-height: 300px }
+
+.product-gallery {
+    margin: 20px 0;
+}
+
+// Gallery Item
+.product__gallery-item:hover { cursor: pointer; }
+
+
+
+
+
+// -------------------------------
+// 3. #Product List
+// -------------------------------
+
+// Product Filters
+// ---------------
+
+.product-listing__form-group {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 10px;
+}
+
+// Submit Button
+.input--search.product-listing__input { height: 36px; }
+
+// Listing Order (Showing 'x' products)
+.listing-order { padding: 20px 0; }
+
+
+// Product List Pagination
+// -----------------------
+
+.product-listing__pagination-item { display: inline-block; }
+
+
+
+
+// -------------------------------
+// 4. #Basket Widget
+// -------------------------------
+
+// Basekt Toggle
+.basket-toggle { margin-bottom: 20px; }
+
+// Basket Total
+.basket-total { padding: 20px 0; }
+
+
+
+
+// -------------------------------
+// 5. #Basket Summary
+// -------------------------------
+
+
+// Basic Cell Settings
+// -------------------
+
+// Default table header & table data spacing
+.basket-summary__summary-table {
+    th, td {
+        padding: 12px;
+    }
+}
+
+
+// Table Cells
+// -----------
+
+// Table Cell
+.basket-summary__cell { 
+	vertical-align: middle;
+    border-radius: 0;
+}
+
+// Column: Image
+.cell--image.basket-summary__cell {
+	width: 25%;
+}
+// Column: Title
+.cell--title.basket-summary__cell {
+	width: 30%;
+}
+// Column: Quantity
+.cell--quantity.basket-summary__cell {
+	width: 15%;
+}
+// Column: Price & Total
+.cell--price.basket-summary__cell,
+.cell--total.basket-summary__cell {
+	width: 10%;
+}
+
+
+// Table at mobile
+// ---------------
+
+@media @mobile  {
+
+    // Use flexbox to display each row 100%
+    .basket-summary__table-row { 
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    // Table Row
+    .basket-summary__table-row { 
+        border-bottom: 1px solid darken(@color-swatch1,10%);
+    }
+
+     // Hide other header cells except 'item'
+    .cell--header.basket-summary__cell:not(:first-child) {
+        display: none;
+    }
+
+    // Increase all cell widths
+    .cell--image.basket-summary__cell,
+    .cell--title.basket-summary__cell,
+    .cell--quantity.basket-summary__cell,
+    .cell--price.basket-summary__cell,
+    .cell--total.basket-summary__cell {
+        width: 100%;
+    }
+
+    // Remove cell borders
+    .basket-summary__cell,
+    .cell--header.basket-summary__cell {
+        border: 0;
+    }
+
+    // Add border-top to 'price' and 'total' cells
+    .cell--price.basket-summary__cell,
+    .cell--total.basket-summary__cell {
+        border-top: 1px solid darken(@color-swatch1,10%);
+    }
+
+    // Remove vertical padding from 'title' cell
+    .cell--title.basket-summary__cell {
+    	padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+
+// Basket Quantity
+// ---------------
+
+// Quantity Inputs 
+.quantity-wrap input { 
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 2px 0;
+    text-align: center;
+}
+
+// Increase 'number' input width
+input[type=number].quantity-field { width: 40px; }
+
+// Remove Number Input Spinners
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+
+// Summary Item Price Titles
+// -------------------------
+
+// Display inline at mobile
+.summary-item-price,
+.summary-item-total {
+    @media @mobile {
+        display: inline-block;
+    }
+}
+
+// Hide at desktop, display at mobile
+.summary-item-price-title,
+.summary-item-total-title {
+    display: none;
+    @media @mobile {
+        display: inline-block;
+    }
+}
+
+.basket-body {
+    display: none;
+}
+.basket-body.open-basket {
+    display: block;
+}
+
+
+// -------------------------------
+// 6. #Ecommerce Images
+// -------------------------------
+
+// Image centering technique
+// -------------------------
+
+// Surrounding image divs 
+.product-listing__image-link,
+.product__image-list {
+    width: 100%;
+    background-color: darken(@color-swatch1,5%);
+    overflow: hidden; // Stops large images overflowing
+}
+
+// Image Element
+.product-listing__image,
+.product__image,
+.image--thumb.product__image {
+    vertical-align: middle; // Vertically centers image
+    max-width: 100%; // Allows image to fill the width or height
+    max-height: 100%;
+}
+
+// Product List
+// ------------
+
+// Sets height & alignment
+.product-listing__image-link {
+    height: 200px;
+    line-height: 200px; // Line height matches div height
+    text-align: center;
+}
+
+
+// Single Product Thumbnails
+// -------------------------
+
+.product__image-list {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    @media @mobile {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+.product__gallery-item {
+    background-color: darken(@color-swatch1,5%);
+    overflow: hidden; // Stops large images overflowing
+}
+
+
+ // Ecommerce
 
 
