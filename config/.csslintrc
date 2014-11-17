@@ -3,6 +3,7 @@
   "duplicate-background-images": false,
   "known-properties": false,
   "overqualified-elements": false,
+  "unqualified-attributes":false,
   "vendor-prefix": false,
   "display-property-grouping": false,
   "fallback-colors": false,
