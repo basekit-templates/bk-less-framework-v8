@@ -2261,13 +2261,13 @@ figcaption {
 .slideshow__pagination-item {
     display: inline-block;
 }
-.slideshow__pagination-item .pagination-button {
+.slideshow__pagination-item .slideshow__button {
     width: 10px;
     height: 10px;
     padding: 0;
 }
 // Selected Item
-.pagination-item.selected .pagination-button {
+.pagination-item.selected .slideshow__button {
     background-color: @color-swatch2;
 }
 
@@ -2427,6 +2427,7 @@ hr.rule {
 	padding-bottom: 0;
 }
 
+
 // ---------------------
 // WIDGETS: Yelp
 // ---------------------
@@ -2452,6 +2453,16 @@ hr.rule {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+// -------------------------
+// WIDGETS: Map
+// -------------------------
+
+
+// Embedded map layout fix
+.google-map img{
+    max-width: inherit;
 }
 
 
