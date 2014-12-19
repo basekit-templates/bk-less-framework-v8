@@ -75,6 +75,10 @@
 .product__gallery-item:hover { cursor: pointer; }
 
 
+// Add To Cart Button
+.js-ecom-product-add-to-cart-btn:disabled {
+    opacity:0.3;
+}
 
 
 
@@ -160,6 +164,17 @@
 .cell--price.basket-summary__cell,
 .cell--total.basket-summary__cell {
 	width: 10%;
+}
+
+// Quantity Buttons
+// -----------
+
+.basket-summary__quantity-minus.js-remove:disabled {
+    opacity: 0.3;
+}
+
+.basket-summary__quantity-plus.js-add:disabled {
+    opacity: 0.3;
 }
 
 
