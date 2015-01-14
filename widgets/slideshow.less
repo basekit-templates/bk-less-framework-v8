@@ -4,10 +4,10 @@
 
 // Element Resets
 .slides-list,
-.pagination-list { 
+.pagination-list {
     margin: 0;
     list-style: none;
-} 
+}
 
 .slideshow-controls {
     -webkit-user-select: none;
@@ -28,8 +28,52 @@
 }
 
 
+// Slideshow Images
+// ----------------
+
+// Hide Img Element
+.slideshow__image {
+    display: none;
+}
+
+.slideshow__figure {
+    background-color: darken(@color-swatch1, 5%);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slideshow__caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+
+// Crop Settings
+// -------------
+
+// Cover
+.cover .slideshow__figure {
+    -webkit-background-size: cover;
+    -moz-background-size:    cover;
+    -o-background-size:      cover;
+    background-size:         cover;
+}
+
+// Contain
+.contain .slideshow__figure {
+    -webkit-background-size: contain;
+    -moz-background-size:    contain;
+    -o-background-size:      contain;
+    background-size:         contain;
+}
+
+
 // Slideshow Controls
 // ------------------
+
+.slide-navigation { margin: 10px 0; }
 
 // Pagination
 // ----------
@@ -46,4 +90,3 @@
 .pagination-item.selected .slideshow__button {
     background-color: @color-swatch2;
 }
-
