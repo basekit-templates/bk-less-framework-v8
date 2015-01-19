@@ -2,35 +2,22 @@
 // CORE: Messages
 // -------------------------
 
-@message-padding: 0.7em;
-@message-bg-light: fade(@font-swatch5-color, 10%);
-@message-bg-dark: fade(@font-swatch5-color, 15%);
-
 .message {
 	position: relative;
 	clear: both;
-	padding: @message-padding;
-	padding-left: (@message-padding + (@message-padding * 2.8));
 	margin: 1em auto;
 	max-width: 1000px;
-	font-size: 16px;
-	line-height: 1.5;
 	color: @font-swatch5-color;
-	background-color: contrast(@color-swatch1, @message-bg-light, @message-bg-dark);
+	padding-left: 1.2em;
 	@media @mobile {
 		font-size: 14px;
 	}
 
 	&:before {
 		font-family: 'FontAwesome', sans-serif;
-		display: block;
-		width: (@message-padding * 2.8);
 		position: absolute;
 		left: 0;
-		top: 0;
-		bottom: 0;
-		text-align: center;
-		padding-top: (@message-padding * 0.8);
+		top: 0.2em;
 	}
 	h3, p {
 		margin: 0;
@@ -42,65 +29,47 @@
 			font-size: 14px;
 		}
 	}
-	strong {
-		font-weight: bold;
-	}
-	p+p {
-		margin-top: (@message-padding * 0.5);
-	}
 }
 
 
 // Error
-.message-error {
+.message--error {
 	&:before {
 		content: "\f071"; // triangle
-		color: #EA0000;
-		background-color: #F6E6E6;
 	}
 }
 
 // Warning
-.message-warning {
+.message--warning {
 	&:before {
 		content: "\f071"; // triangle
-		color: #73640A;
-		background-color: #FFFACB;
 	}
 }
 
 // Information
-.message-information {
+.message--information {
 	&:before {
 		content: "\f05a"; // circled i
-		color: #0B4E67;
-		background-color: #E6F5F6;
 	}
 }
 
 // Success
-.message-success {
+.message--success {
 	&:before {
 		content: "\f00c"; // check
-		color: #305D01;
-		background-color: #EEF7C0;
 	}
 }
 
 // Not Found
-.message-not-found {
+.message--not-found {
 	&:before {
 		content: "\f002"; // magnifying glass
-		color: #0B4E67;
-		background-color: #E6F5F6;
 	}
 }
 
 // Empty State
-.message-empty {
+.message--empty {
 	&:before {
 		content: "\f040"; // pencil
-		color: #858585;
-		background-color: #F1F1F1;
 	}
 }
