@@ -33,19 +33,20 @@
 // ----------------
 
 // Hide Img Element
-.slideshow__image {
+.responsiveslideshow__image {
     display: none;
 }
 
-.slideshow__figure {
+.responsiveslideshow__figure {
     background-color: darken(@color-swatch1, 5%);
     background-position: center;
     background-repeat: no-repeat;
 }
-.slideshow__caption {
+.responsiveslideshow__caption {
     position: absolute;
     bottom: 0;
     width: 100%;
+    margin: 0;
     padding: 10px 20px;
     background-color: rgba(0,0,0,0.2);
 }
@@ -55,7 +56,7 @@
 // -------------
 
 // Cover
-.cover .slideshow__figure {
+.cover .responsiveslideshow__figure {
     -webkit-background-size: cover;
     -moz-background-size:    cover;
     -o-background-size:      cover;
@@ -63,7 +64,7 @@
 }
 
 // Contain
-.contain .slideshow__figure {
+.contain .responsiveslideshow__figure {
     -webkit-background-size: contain;
     -moz-background-size:    contain;
     -o-background-size:      contain;
@@ -76,18 +77,34 @@
 
 .slide-navigation { margin: 10px 0; }
 
+// Removes outline
+.previous-button,
+.next-button,
+.pause-toggle {
+    &:focus {
+        outline: none;
+    }
+}
+
+
 // Pagination
 // ----------
 
-.slideshow__pagination-item {
+.responsiveslideshow__pagination-item {
     display: inline-block;
     line-height: normal;
 }
-.slideshow__pagination-item .slideshow__button {
+
+// Pagination Button
+.responsiveslideshow__pagination-item .responsiveslideshow__button {
     padding: 3px 6px;
     font-size: 12px;
+    &:focus {
+        outline: none;
+    }
 }
+
 // Selected Item
-.pagination-item.selected .slideshow__button {
+.responsiveslideshow__pagination-item.selected .responsiveslideshow__button {
     background-color: @color-swatch2;
 }

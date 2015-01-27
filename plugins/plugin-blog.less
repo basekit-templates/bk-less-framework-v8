@@ -2,24 +2,21 @@
 // PLUGINS: Blog
 // -----------------------------
 
-// -----------------------------
-// Blog: Element Defaults 
-// -----------------------------
+// Element Resets
+// --------------
 
 // Navigation List
-// ---------------
-
 .sharing-links,
 .tag-list,
-.pagination-numbers { 
+.pagination-numbers {
 	margin: 0;
 	list-style: none;
 }
-.menu-navigation-list { 
+.menu-navigation-list {
 	margin-left: 0;
 }
 // Resets Post Image Height
-.post-image { 
+.post-image {
 	font-size: 0;
 	line-height: 0;
 }
@@ -30,19 +27,19 @@
 
 // Typography (Removes padding)
 .section-title,
-.post-category { 
-	padding-bottom: 0; 
+.post-category {
+	padding-bottom: 0;
 }
 
 // Post Article
 .post-article {
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 	&:last-child {
 		margin-bottom: 30px;
 	}
 }
-.post-content { margin: 0 0 20px; }
-.blog-post-list__timestamp { 
+.post-content { margin: 20px 0 0; }
+.blogpost-list__timestamp {
 	display: block;
 	padding: 10px 0 20px;
 }
@@ -51,8 +48,8 @@
 .post-attributes { margin: 20px 0 10px; }
 
 // Footer Sharing Links
-.blog-post-list__network-item,
-.blog-post__network-item { 
+.blogpost-list__network-item,
+.blogpost__network-item {
 	margin-top: 10px;
 }
 
@@ -61,17 +58,23 @@
 // Tag Title,
 // Tag Item List,
 // Tag Item
-.blog-post-list__button,
-.blog-post__button,
+.blogpost-list__button,
+.blogpost__button,
 .tags-title,
 .tag-list,
 .tag-item,
-.blog-post-list__pagination-item { 
+.blogpost-list__pagination-item {
 	display: inline-block;
 }
 
+// Category Title
+.category-title {
+	display: inline-block;
+	padding: 0;
+}
+
 // Network Item
-.network-item { 
+.network-item {
 	display: inline-block;
 	margin-right: 10px;
-}	
+}

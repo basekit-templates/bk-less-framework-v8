@@ -6,16 +6,16 @@
 // #Table of Contents
 // -----------------------------
 
-// 1. #ELEMENT DEFAULTS
-// 2. #SINGLE PRODUCT
-// 3. #PRODUCT LIST
-// 4. #BASKET WIDGET
-// 5. #BASKET SUMMARY
-// 6. #ECOMMERCE IMAGES
+// 1. #Element Defaults
+// 2. #Single Product
+// 3. #Product List
+// 4. #Basket Widget
+// 5. #Basket Summary
+// 6. #Ecommerce Images
 
 
 // -------------------------------
-// 1. #Element Defaults 
+// 1. #Element Defaults
 // -------------------------------
 
 // Remove list margin
@@ -29,7 +29,7 @@
 }
 // Add bottom margin
 .basket-item,
-.summary-table { 
+.summary-table {
 	margin: 0 0 20px;
 }
 .basket-item:last-child { margin-bottom: 0; }
@@ -57,7 +57,7 @@
 // 2. #Single Product
 // -------------------------------
 
-.product__gallery-item {
+.product-gallery .gallery-item {
     display: inline-block;
     vertical-align: top;
     width: 80px;
@@ -65,7 +65,7 @@
 }
 
 // Product Image
-.image--current.product__image { max-height: 300px }
+.product-image .image--current { max-height: 400px }
 
 .product-gallery {
     margin: 20px 0;
@@ -74,10 +74,9 @@
 // Gallery Item
 .product__gallery-item:hover { cursor: pointer; }
 
-
 // Add To Cart Button
 .js-ecom-product-add-to-cart-btn:disabled {
-    opacity:0.3;
+    opacity: 0.3;
 }
 
 
@@ -89,14 +88,14 @@
 // Product Filters
 // ---------------
 
-.product-listing__form-group {
+.ecomproductslist__form-group {
 	display: inline-block;
 	vertical-align: bottom;
 	margin-right: 10px;
 }
 
 // Submit Button
-.input--search.product-listing__input { height: 36px; }
+.input--search.ecomproductslist__input { height: 36px; }
 
 // Listing Order (Showing 'x' products)
 .listing-order { padding: 20px 0; }
@@ -105,7 +104,7 @@
 // Product List Pagination
 // -----------------------
 
-.product-listing__pagination-item { display: inline-block; }
+.ecomproductslist__pagination-item { display: inline-block; }
 
 
 
@@ -297,17 +296,17 @@ input[type=number]::-webkit-outer-spin-button {
 // Image centering technique
 // -------------------------
 
-// Surrounding image divs 
-.product-listing__image-link,
-.product__image-list {
+// Surrounding image divs
+.ecomproductslist__image-link,
+.ecomproduct__image-list {
     width: 100%;
     background-color: darken(@color-swatch1,5%);
     overflow: hidden; // Stops large images overflowing
 }
 
 // Image Element
-.product-listing__image,
-.product__image,
+.ecomproductslist__image,
+.ecomproduct__image,
 .image--thumb.product__image {
     vertical-align: middle; // Vertically centers image
     max-width: 100%; // Allows image to fill the width or height
@@ -318,7 +317,7 @@ input[type=number]::-webkit-outer-spin-button {
 // ------------
 
 // Sets height & alignment
-.product-listing__image-link {
+.ecomproductslist__image-link {
     height: 200px;
     line-height: 200px; // Line height matches div height
     text-align: center;
@@ -328,17 +327,19 @@ input[type=number]::-webkit-outer-spin-button {
 // Single Product Thumbnails
 // -------------------------
 
-.product__image-list {
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    @media @mobile {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
+.product-gallery {
+    .gallery-item {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        @media @mobile {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
     }
 }
-.product__gallery-item {
+.ecomproduct .gallery-item {
     background-color: darken(@color-swatch1,5%);
     overflow: hidden; // Stops large images overflowing
 }

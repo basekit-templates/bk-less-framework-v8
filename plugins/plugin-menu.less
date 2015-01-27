@@ -13,18 +13,18 @@
 
 
 // -----------------------------
-// 1. #Menu: Element Defaults 
+// 1. #Menu: Element Defaults
 // -----------------------------
 
 // Navigation List
 // ---------------
 
 .menu-list,
-.dietary-list { 
+.dietary-list {
 	margin: 0;
 	list-style: none;
 }
-.menu-navigation-list { 
+.menu-navigation-list {
 	margin-left: 0;
 }
 
@@ -41,8 +41,8 @@
 .item-title,
 .item-subtitle,
 .item-price,
-.item-details { 
-	padding-bottom: 0; 
+.item-details {
+	padding-bottom: 0;
 }
 
 
@@ -63,7 +63,7 @@
 // 3. #Menu: CSS Column Structure
 // ------------------------------
 
-// Applied to parent list, not subsection list 
+// Applied to parent list, not subsection list
 .menu-list:not(.menu-list--subsection) {
 	column-count: 2;
 	column-gap: 50px;
@@ -88,6 +88,7 @@
 
 // Applied to 'li'
 .menu-item {
+	display: table; // Solves Firefox bug
 	margin: 0 0 20px;
 	break-inside: avoid;
 	-webkit-column-break-inside: avoid;
@@ -103,7 +104,7 @@
 	@media @tablet {
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
-		column-count: 1;	
+		column-count: 1;
 	}
 	&.bk1-columns {
 		-webkit-column-count: 1;
