@@ -27,15 +27,10 @@
 	margin: 0;
 	list-style: none;
 }
-// Add bottom margin
-.basket-item,
-.summary-table {
-	margin: 0 0 20px;
-}
-.basket-item:last-child { margin-bottom: 0; }
-
 
 // Typography (Removes padding)
+.product-item-title,
+.product-item-price,
 .item-quantity,
 .basket-item-price,
 .summary-item-title,
@@ -64,19 +59,44 @@
     height: 80px;
 }
 
-// Product Image
-.product-image .image--current { max-height: 400px }
+.product-image .image-link {
+    background-position: -100%;
+    background-repeat: no-repeat;
+}
+.product-image .image-link:hover {
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+}
 
+// Hide Product Image (use BG)
+.product-image .image {
+    display: none;
+}
+
+// Product Gallery (Thumbnails)
 .product-gallery {
     margin: 20px 0;
 }
 
-// Gallery Item
-.product__gallery-item:hover { cursor: pointer; }
+
+// Product Actions (Form)
+// ----------------------
+
+.product-actions {
+    margin: 20px 0;
+}
 
 // Add To Cart Button
 .js-ecom-product-add-to-cart-btn:disabled {
     opacity: 0.3;
+}
+
+
+// Product Attibutes
+// -----------------
+
+.product-attributes {
+    margin: 10px 0;
 }
 
 
@@ -95,16 +115,28 @@
 }
 
 // Submit Button
-.input--search.ecomproductslist__input { height: 36px; }
+.input--search.ecomproductslist__input {
+    height: 36px;
+}
 
 // Listing Order (Showing 'x' products)
-.listing-order { padding: 20px 0; }
+.listing-order {
+    padding: 20px 0;
+}
+
+
+// Product Item Details
+.product-item-details {
+    margin-top: 20px;
+}
 
 
 // Product List Pagination
 // -----------------------
 
-.ecomproductslist__pagination-item { display: inline-block; }
+.ecomproductslist__pagination-item {
+    display: inline-block;
+}
 
 
 
@@ -113,11 +145,46 @@
 // 4. #Basket Widget
 // -------------------------------
 
-// Basekt Toggle
-.basket-toggle { margin-bottom: 20px; }
+.basket-body {
+    display: none; // Hide by default
+}
+.show-content .basket-body {
+    display: block; // Display on click
+}
+
+// Basket Toggle / Item
+.basket-toggle {
+    margin-bottom: 20px;
+}
+.basket-item {
+    position: relative;
+    margin-bottom: 20px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Basket Image Wrapper
+.basket-item-image {
+    margin-bottom: 10px;
+}
 
 // Basket Total
-.basket-total { padding: 20px 0; }
+.basket-footer {
+    margin-top: 20px;
+}
+
+// Item Remove Button
+.item-remove {
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 12px;
+
+    // Remove icon spacing
+    &:before {
+        margin-right: 0;
+    }
+}
 
 
 
@@ -126,113 +193,74 @@
 // 5. #Basket Summary
 // -------------------------------
 
-
-// Basic Cell Settings
-// -------------------
-
-// Default table header & table data spacing
-.basket-summary__summary-table {
-    th, td {
-        padding: 12px;
-    }
-}
-
-
-// Table Cells
-// -----------
-
-// Table Cell
-.basket-summary__cell { 
-	vertical-align: middle;
-    border-radius: 0;
-}
-
-// Column: Image
-.cell--image.basket-summary__cell {
-	width: 25%;
-}
-// Column: Title
-.cell--title.basket-summary__cell {
-	width: 30%;
-}
-// Column: Quantity
-.cell--quantity.basket-summary__cell {
-	width: 15%;
-}
-// Column: Price & Total
-.cell--price.basket-summary__cell,
-.cell--total.basket-summary__cell {
-	width: 10%;
-}
-
-// Quantity Buttons
-// -----------
-
-.basket-summary__quantity-minus.js-remove:disabled {
-    opacity: 0.3;
-}
-
-.basket-summary__quantity-plus.js-add:disabled {
-    opacity: 0.3;
-}
-
-
-// Table at mobile
-// ---------------
-
-@media @mobile  {
-
-    // Use flexbox to display each row 100%
-    .basket-summary__table-row { 
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-direction: normal;
-        -moz-box-direction: normal;
-        -webkit-box-orient: vertical;
-        -moz-box-orient: vertical;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
+.summary-table {
 
     // Table Row
-    .basket-summary__table-row { 
-        border-bottom: 1px solid darken(@color-swatch1,10%);
+    .table-row {
+        @media @mobile  {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-direction: normal;
+            -moz-box-direction: normal;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+
+            border-bottom: 1px solid darken(@color-swatch1,10%);
+        }
     }
 
-     // Hide other header cells except 'item'
-    .cell--header.basket-summary__cell:not(:first-child) {
-        display: none;
+    // Cell Header
+    .cell--header:not(:first-child) {
+        @media @mobile {
+            display: none;
+        }
     }
 
-    // Increase all cell widths
-    .cell--image.basket-summary__cell,
-    .cell--title.basket-summary__cell,
-    .cell--quantity.basket-summary__cell,
-    .cell--price.basket-summary__cell,
-    .cell--total.basket-summary__cell {
-        width: 100%;
+    // Column: Image
+    .cell--image {
+        vertical-align: top;
+        width: 15%;
     }
 
-    // Remove cell borders
-    .basket-summary__cell,
-    .cell--header.basket-summary__cell {
-        border: 0;
+    // Column: Quantity
+    .cell--quantity {
+        width: 15%;
     }
 
-    // Add border-top to 'price' and 'total' cells
-    .cell--price.basket-summary__cell,
-    .cell--total.basket-summary__cell {
-        border-top: 1px solid darken(@color-swatch1,10%);
+    // Column: Price & Total
+    .cell--price,
+    .cell--total {
+        width: 10%;
+        @media @mobile {
+            border-top: 1px solid darken(@color-swatch1,10%)!important;
+        }
     }
 
-    // Remove vertical padding from 'title' cell
-    .cell--title.basket-summary__cell {
-    	padding-top: 0;
-        padding-bottom: 0;
+    // Table Cell: General
+    .cell {
+        vertical-align: middle;
+        padding: 8px 12px;
+        border-radius: 0;
+        @media @mobile {
+            width: 100%;
+            border: 0;
+        }
+    }
+
+    // Column: Title
+    .cell--title {
+        width: 50%;
+        @media @mobile {
+            width: 100%;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
     }
 
 }
@@ -241,52 +269,65 @@
 // Basket Quantity
 // ---------------
 
-// Quantity Inputs 
-.quantity-wrap input { 
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    margin: 2px 0;
-    text-align: center;
+// Quantity Wrap
+.quantity-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    width: 70%;
+    background-color: darken(@color-swatch1,5%);
+
+    @media @mobile {
+        display: inline-block;
+        width: initial;
+    }
 }
 
-// Increase 'number' input width
-input[type=number].quantity-field { width: 40px; }
-
-// Remove Number Input Spinners
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+// Quantity Inputs
+.button--quantity {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    line-height: initial;
 }
 
 
 // Summary Item Price Titles
 // -------------------------
 
-// Display inline at mobile
-.summary-item-price,
-.summary-item-total {
-    @media @mobile {
-        display: inline-block;
-    }
+// // Display inline at mobile
+// .summary-item-price,
+// .summary-item-total {
+//     @media @mobile {
+//         display: inline-block;
+//     }
+// }
+
+// // Hide at desktop, display at mobile
+// .summary-item-price-title,
+// .summary-item-total-title {
+//     display: none;
+//     @media @mobile {
+//         display: inline-block;
+//     }
+// }
+
+
+// Quantity Buttons
+// ----------------
+
+.quantity-minus.js-remove:disabled,
+.quantity-minus.js-add:disabled {
+    opacity: 0.3;
 }
 
-// Hide at desktop, display at mobile
-.summary-item-price-title,
-.summary-item-total-title {
-    display: none;
-    @media @mobile {
-        display: inline-block;
-    }
-}
 
-.basket-body {
-    display: none;
-}
-.basket-body.open-basket {
-    display: block;
-}
 
 
 // -------------------------------
@@ -297,17 +338,29 @@ input[type=number]::-webkit-outer-spin-button {
 // -------------------------
 
 // Surrounding image divs
-.ecomproductslist__image-link,
-.ecomproduct__image-list {
+
+// Product List
+.product-item-image,
+.product-item-image .image-link,
+// Product Gallery (Thumbnails)
+.product-gallery .gallery-item,
+// Single Product
+.product-image .image-link,
+// Basket
+.basket-item-image .image-link {
     width: 100%;
     background-color: darken(@color-swatch1,5%);
     overflow: hidden; // Stops large images overflowing
+    text-align: center;
 }
 
 // Image Element
-.ecomproductslist__image,
-.ecomproduct__image,
-.image--thumb.product__image {
+.product-item-image .image,
+.product-gallery .image-button,
+.product-image .image,
+.image--thumb.product__image,
+.basket-item-image .image {
+    display: inline-block;
     vertical-align: middle; // Vertically centers image
     max-width: 100%; // Allows image to fill the width or height
     max-height: 100%;
@@ -316,32 +369,51 @@ input[type=number]::-webkit-outer-spin-button {
 // Product List
 // ------------
 
-// Sets height & alignment
-.ecomproductslist__image-link {
+// Sets individual height & alignments for all image
+// elements using this method of centering
+
+// Product List
+.product-item-image,
+.product-item-image .image-link {
     height: 200px;
     line-height: 200px; // Line height matches div height
-    text-align: center;
+}
+// Single Product
+.product-image .image-link {
+    height: 400px;
+    line-height: 400px;
+    @media @tablet {
+        height: 300px;
+        line-height: 300px;
+    }
+    @media @mobile {
+        height: 200px;
+        line-height: 200px;
+    }
+}
+// Basket
+.basket-item-image .image-link {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background-repeat: no-repeat;
+    background-position: -100%;
 }
 
 
 // Single Product Thumbnails
 // -------------------------
 
-.product-gallery {
-    .gallery-item {
-        width: 80px;
-        height: 80px;
-        line-height: 80px;
-        @media @mobile {
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-        }
+.product-gallery .gallery-item {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    cursor: pointer;
+    @media @mobile {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
     }
-}
-.ecomproduct .gallery-item {
-    background-color: darken(@color-swatch1,5%);
-    overflow: hidden; // Stops large images overflowing
 }
 
 
