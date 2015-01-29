@@ -17,6 +17,7 @@
 // 1. #Main Button
 // ---------------------
 
+// Standard
 button,
 .button {
     display: inline-block;
@@ -45,8 +46,21 @@ button,
     &:focus {
         outline: none;
     }
+
+    &.italic {
+        font-style: italic;
+    }
+
+    &.bold {
+        font-weight: bold;
+    }
 }
 
+// Secondary
+.button--secondary {
+    padding: 6px 12px;
+    font-size: 14px;
+}
 
 
 

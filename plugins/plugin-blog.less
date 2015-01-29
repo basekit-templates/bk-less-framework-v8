@@ -26,7 +26,6 @@
 // ---------------
 
 // Typography (Removes padding)
-.section-title,
 .post-category {
 	padding-bottom: 0;
 }
@@ -38,14 +37,46 @@
 		margin-bottom: 30px;
 	}
 }
-.post-content { margin: 20px 0 0; }
-.blogpost-list__timestamp {
-	display: block;
-	padding: 10px 0 20px;
+
+
+
+
+// -----------------------------
+// Single Blog Post
+// -----------------------------
+
+.post-image .image {
+	max-height: 350px;
+	@media @mobile {
+		max-height: 200px;
+	}
 }
 
+
+// Post Content
+// ------------
+
+.post-content {
+	margin: 20px 0;
+}
+
+// Timestamp
+.post-footer .timestamp {
+	display: block;
+	margin: 10px 0;
+}
+
+
+
+
+// -----------------------------
+// Blog Post List
+// -----------------------------
+
 // Post Attributes
-.post-attributes { margin: 20px 0 10px; }
+.post-attributes {
+	margin: 20px 0 10px;
+}
 
 // Footer Sharing Links
 .blogpost-list__network-item,

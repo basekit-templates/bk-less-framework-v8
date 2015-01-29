@@ -6,14 +6,15 @@
 // #Table of Contents
 // -----------------------------
 
-// 1. #ELEMENT DEFAULTS
-// 2. #MENU ITEMS
-// 3. #CSS COLUMN STRUCTURE
-// 4. #ITEM IMAGE CENTERING
+// 1. #Element Defaults
+// 2. #Menu Sections Lists
+// 3. #Menu Items
+// 4. #CSS Column Structure
+// 5. #Menu Images
 
 
 // -----------------------------
-// 1. #Menu: Element Defaults
+// 1. #Element Defaults
 // -----------------------------
 
 // Navigation List
@@ -24,20 +25,13 @@
 	margin: 0;
 	list-style: none;
 }
-.menu-navigation-list {
-	margin-left: 0;
-}
 
 
 // Element Spacing
 // ---------------
 
-// Menu Section
-.menu-section { margin: 0 0 20px; }
-
-
 // Typography (Removes padding)
-.section-title,
+.section-description,
 .item-title,
 .item-subtitle,
 .item-price,
@@ -46,32 +40,80 @@
 }
 
 
+
+
 // -----------------------------
-// 2. #Menu: Menu Items
+// 2. #Menu Sections Lists
 // -----------------------------
 
-.menu-navigation-item,
+// Menu Section
+.menusections-list {
+	margin: 20px 0;
+}
+.menusections-item {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+
+
+
+// -----------------------------
+// 3. #Menu Items
+// -----------------------------
+
+// Item Content
+.item-content {
+	margin-top: 20px;
+}
+
+// Dietary Item
 .dietary-item  {
     display: inline-block;
     margin-right: 10px;
+    &:last-child {
+    	margin-right: 0;
+    }
+}
+
+// Featured Item
+// -------------
+
+.menu-item--featured,
+.menu-section--featured {
+	padding: 20px;
+	background-color: darken(@color-swatch1,5%);
+}
+.menu-section--featured {
+	margin-bottom: 30px;
+	padding: 30px;
+	background-color: darken(@color-swatch1,5%);
+}
+// Featured Item Image Backgrounds
+.menu .menu-item--featured .item-image .image-link,
+.menu .menu-section--featured .item-image .image-link {
+	background-color: @color-swatch1;
+	height: 220px;
+	line-height: 220px;
 }
 
 
 
 
 // ------------------------------
-// 3. #Menu: CSS Column Structure
+// 4. #CSS Column Structure
 // ------------------------------
 
 // Applied to parent list, not subsection list
-.menu-list:not(.menu-list--subsection) {
+.menu-items:not(.menu-section--subsection),
+.menu-list {
 	column-count: 2;
 	column-gap: 50px;
 	-moz-column-count: 2;
 	-moz-column-gap: 50px;
 	-webkit-column-count: 2;
 	-webkit-column-gap : 50px;
-	@media @tablet { 
+	@media @tablet {
 		column-count: 2;
 		column-gap: 60px;
 		-moz-column-count: 2;
@@ -79,7 +121,7 @@
 		-webkit-column-count: 2;
 		-webkit-column-gap : 60px;
 	}
-	@media @mobile { 
+	@media @mobile {
 		column-count: 1;
 		-moz-column-count: 1;
 		-webkit-column-count: 1;
@@ -89,7 +131,7 @@
 // Applied to 'li'
 .menu-item {
 	display: table; // Solves Firefox bug
-	margin: 0 0 20px;
+	margin-bottom: 20px;
 	break-inside: avoid;
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
@@ -117,29 +159,41 @@
 
 
 // ------------------------------
-// 4. #Menu: Item Image Centering
+// 5. #Menu Images
 // ------------------------------
 
-.menu__image-link { display: inline; }
+// Image centering technique
+// -------------------------
 
-// Item Image
-.item-image {
-	width: 100%;
-	height: 200px;
-	margin: 0 0 20px;
-	background-color: #f5f5f5;
-	line-height: 200px; // Line height matches div height
-	text-align: center; // Horizontally centers image
-	overflow: hidden; // Stops large images overflowing
+.menu {
+
+	.item-image {
+		// Surrounding image div
+		.image-link {
+			width: 100%;
+		    background-color: darken(@color-swatch1,5%);
+		    overflow: hidden; // Stops large images overflowing
+		    text-align: center;
+
+		    height: 240px;
+		    line-height: 240px;
+
+		    @media @tablet {
+		        height: 200px;
+		        line-height: 200px;
+		    }
+		    @media @mobile {
+		        height: 180px;
+		        line-height: 180px;
+		    }
+		}
+		// Image Element
+		.image {
+			display: inline-block;
+		    vertical-align: middle; // Vertically centers image
+		    max-width: 100%; // Allows image to fill the width or height
+		    max-height: 100%;
+		}
+	}
+
 }
-// Menu Image Element
-.menu__image {
-	vertical-align: middle; // Vertically centers image
-	max-width: 100%; // Allows image to fill the width or height
-	max-height: 100%;
-}
-
-
-
-
-

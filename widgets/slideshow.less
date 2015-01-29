@@ -4,7 +4,8 @@
 
 // Element Resets
 .slides-list,
-.pagination-list {
+.pagination-list,
+.responsiveslideshow .figure {
     margin: 0;
     list-style: none;
     line-height: normal;
@@ -22,9 +23,8 @@
 
 .slide-item {
     display: none;
-    // Current Item
     &.current {
-        display: list-item;
+        display: list-item; // Current Item
     }
 }
 
@@ -32,23 +32,50 @@
 // Slideshow Images
 // ----------------
 
-// Hide Img Element
-.responsiveslideshow__image {
-    display: none;
-}
+.responsiveslideshow {
 
-.responsiveslideshow__figure {
-    background-color: darken(@color-swatch1, 5%);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.responsiveslideshow__caption {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin: 0;
-    padding: 10px 20px;
-    background-color: rgba(0,0,0,0.2);
+    // Figure
+    .figure {
+        background-color: darken(@color-swatch1, 5%);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    // Hides Img Element
+    .image {
+        display: none;
+    }
+    .caption  {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px 20px;
+        background-color: rgba(0,0,0,0.2);
+    }
+
+    // Pagination
+    // ----------
+
+    // Pagination Button
+    .pagination-item {
+        display: inline-block;
+        line-height: normal;
+    }
+
+    // Pagination Button
+    .button--pagination {
+        padding: 3px 6px;
+        font-size: 12px;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    // Pagination Selected Item
+    .pagination-item.selected .button--pagination {
+        background-color: @color-swatch2;
+    }
 }
 
 
@@ -56,7 +83,7 @@
 // -------------
 
 // Cover
-.cover .responsiveslideshow__figure {
+.responsiveslideshow .cover .figure {
     -webkit-background-size: cover;
     -moz-background-size:    cover;
     -o-background-size:      cover;
@@ -64,7 +91,7 @@
 }
 
 // Contain
-.contain .responsiveslideshow__figure {
+.responsiveslideshow .contain .figure {
     -webkit-background-size: contain;
     -moz-background-size:    contain;
     -o-background-size:      contain;
@@ -75,36 +102,9 @@
 // Slideshow Controls
 // ------------------
 
-.slide-navigation { margin: 10px 0; }
-
-// Removes outline
-.previous-button,
-.next-button,
-.pause-toggle {
-    &:focus {
-        outline: none;
-    }
+.slide-navigation {
+    margin: 10px 0;
 }
 
 
-// Pagination
-// ----------
 
-.responsiveslideshow__pagination-item {
-    display: inline-block;
-    line-height: normal;
-}
-
-// Pagination Button
-.responsiveslideshow__pagination-item .responsiveslideshow__button {
-    padding: 3px 6px;
-    font-size: 12px;
-    &:focus {
-        outline: none;
-    }
-}
-
-// Selected Item
-.responsiveslideshow__pagination-item.selected .responsiveslideshow__button {
-    background-color: @color-swatch2;
-}
