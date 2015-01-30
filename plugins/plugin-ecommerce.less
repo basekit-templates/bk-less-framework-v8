@@ -282,6 +282,9 @@
     width: 70%;
     background-color: darken(@color-swatch1,5%);
 
+    @media @tablet {
+        width: 100%;
+    }
     @media @mobile {
         width: initial;
         max-width: 90px;
@@ -323,6 +326,8 @@
 .basket-item-image .image-link {
     width: 100%;
     background-color: darken(@color-swatch1,5%);
+    background-repeat: no-repeat;
+    background-position: -9999px;
     overflow: hidden; // Stops large images overflowing
     text-align: center;
 }
