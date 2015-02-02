@@ -24,8 +24,8 @@
 .basket-list,
 .categories-list,
 .product-gallery {
-	margin: 0;
-	list-style: none;
+    margin: 0;
+    list-style: none;
 }
 
 // Typography (Removes padding)
@@ -42,7 +42,7 @@
 .summary-item-total-title,
 .product-category,
 .tags-title {
-	padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 
@@ -110,9 +110,9 @@
 .product-filters {
 
     .form-group {
-    	display: inline-block;
-    	vertical-align: bottom;
-    	margin-right: 10px;
+        display: inline-block;
+        vertical-align: bottom;
+        margin-right: 10px;
     }
 
     // Submit Button
@@ -210,8 +210,8 @@
         }
     }
 
-    // Cell Header
-    .cell--header:not(:first-child) {
+    // Table Row Heading
+    .table-row--heading {
         @media @mobile {
             display: none;
         }
@@ -240,6 +240,14 @@
         @media @mobile {
             width: 100%;
             border: 0;
+        }
+        &:not(.cell--title):before {
+            @media @mobile {
+                content: attr(data-title);
+                display: block;
+                font-size: 12px;
+                line-height: 1.2;
+            }
         }
     }
 
@@ -288,6 +296,7 @@
     @media @mobile {
         width: initial;
         max-width: 90px;
+        margin-top: 0.5em;
     }
 
     // Quantity Inputs
