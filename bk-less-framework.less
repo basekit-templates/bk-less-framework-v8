@@ -473,9 +473,8 @@ caption, dl, dd, figcaption, figure, h1, h2, h3, h4, h5, h6, p, pre, table, ol, 
 blockquote, ol, ul {
 	margin-left: 1.8em;
 }
-code, pre, th {
+code, pre, th, thead td {
 	background-color: #F5F5F5;
-	border-radius: 3px;
 }
 code, pre, th, td {
 	color: #324354;
@@ -1832,6 +1831,13 @@ body:after {
 // WIDGETS: Image
 // -------------------------
 
+
+// Image Figure
+
+.imagewidget__figure {
+    margin: 0;
+}
+
 // Element Resets
 img {
 	display: block;
@@ -2420,7 +2426,11 @@ hr.rule {
 
 // Applied to 'li'
 .menu-item {
-	display: table; // Solves Firefox bug
+	// Forces styles below to be applied in FF
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+
 	margin-bottom: 20px;
 	break-inside: avoid;
 	-webkit-column-break-inside: avoid;
