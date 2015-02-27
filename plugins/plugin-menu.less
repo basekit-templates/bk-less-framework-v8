@@ -130,7 +130,11 @@
 
 // Applied to 'li'
 .menu-item {
-	display: table; // Solves Firefox bug
+	// Forces styles below to be applied in FF
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+
 	margin-bottom: 20px;
 	break-inside: avoid;
 	-webkit-column-break-inside: avoid;
