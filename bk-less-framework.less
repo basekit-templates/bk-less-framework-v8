@@ -1025,14 +1025,14 @@ code, pre, th, td { color: @font-swatch4-color; }
 // ------------------------------
 
 .responsivecolumns {
-	.clearfix;
+    .clearfix;
 
-	// Column
+    // Column
 
-	.column {
-		float:left;
-		min-height: 40px;
-	}
+    .column {
+        float:left;
+        min-height: 40px;
+    }
 }
 
 
@@ -1040,80 +1040,81 @@ code, pre, th, td { color: @font-swatch4-color; }
 // ------------------------------
 
 .responsivecolumns {
-	.half {
-		width: 48.5%;
-		margin-right: 3%;
+    .columns-two-left, .columns-two-right {
+        width: 48.5%;
+        margin-right: 3%;
 
-		&.last {
-			margin-right: 0;
-		}
 
-		@media only screen and (max-width: 660px) {
-			width: 100%;
-			margin-right: 0;
-		}
-	}
 
-	// columns-two-25-75
+        @media only screen and (max-width: 660px) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 
-	.columns-two-25-75 & {
-		.first {
-			width: 22.75%;
-		}
-		.last {
-			width: 74.25%;
-		}
-	}
+    .columns-two-right {
+        margin-right: 0;
+    }
 
-	// columns-two-75-25
+    // columns-two-25-75
 
-	.columns-two-75-25 & {
-		.first {
-			width: 74.25%;
-		}
-		.last {
-			width: 22.75%;
-		}
-	}
+    .columns-two-25-75 & {
+        .columns-two-left {
+            width: 22.75%;
+        }
+        .columns-two-right {
+            width: 74.25%;
+        }
+    }
 
-	// columns-two-34-66
+    // columns-two-75-25
 
-	.columns-two-34-66 & {
-		.first {
-			width: 31.333%;
-		}
-		.last {
-			width: 65.668%;
-		}
-	}
+    .columns-two-75-25 & {
+        .columns-two-left {
+            width: 74.25%;
+        }
+        .columns-two-right {
+            width: 22.75%;
+        }
+    }
 
-	// columns-two-66-34
+    // columns-two-34-66
 
-	.columns-two-66-34 & {
-		.first {
+    .columns-two-34-66 & {
+        .columns-two-left {
+            width: 31.333%;
+        }
+        .columns-two-right {
+            width: 65.668%;
+        }
+    }
 
-			width: 65.668%;
-		}
-		.last {
-			width: 31.333%;
-		}
-	}
+    // columns-two-66-34
 
-	// Responsivness of layout variations
+    .columns-two-66-34 & {
+        .columns-two-left {
+            width: 65.668%;
+        }
+        .columns-two-right {
+            width: 31.333%;
+        }
+    }
 
-	.columns-two-75-25 &,
-	.columns-two-25-75 &,
-	.columns-two-66-34 &,
-	.columns-two-34-66 & {
-		.column {
-			@media only screen and (max-width: 925px) {
-				width: 48.5%;
-			}
-			@media only screen and (max-width: 660px) {
-				width: 100%;
-			}
-		}
-	}
+    // Responsivness of layout variations
+
+    .columns-two-75-25 &,
+    .columns-two-25-75 &,
+    .columns-two-66-34 &,
+    .columns-two-34-66 & {
+        .column {
+            @media only screen and (max-width: 925px) {
+                width: 48.5%;
+            }
+            @media only screen and (max-width: 660px) {
+                width: 100%;
+            }
+        }
+    }
 }
 
 
@@ -1123,60 +1124,62 @@ code, pre, th, td { color: @font-swatch4-color; }
 // ------------------------------
 
 .responsivecolumns {
-	.third {
-		width: 31.333%;
-		margin-right: 3%;
-
-		&.last {
-			margin-right: 0;
-		}
-
-		@media only screen and (max-width:700px) {
-			width: 100%;
-			margin-right: 0;
-		}
-	}
-
-	// columns-three-25-25-50
-
-	.columns-three-25-25-50 & {
-		.first, .middle {
-			width: 22.75%;
-		}
-		.last {
-			width: 48.5%;
-		}
-	}
-
-	// columns-three-50-25-25
-
-	.columns-three-50-25-25 & {
-		.first {
-			width: 48.5%;
-		}
-		.middle, .last {
-			width: 22.75%;
-		}
-	}
-
-	// Responsivness of layout variations
+    .columns-three-left, .columns-three-middle, .columns-three-right {
+        width: 31.333%;
+        margin-right: 3%;
 
 
-	.columns-three-50-25-25 &,
-	.columns-three-25-25-50 & {
-		.column {
-			@media only screen and (max-width: 925px) {
-				width: 31.333%;
-				margin-right: 3%;
-				&.last {
-					margin-right: 0;
-				}
-			}
-			@media only screen and (max-width: 479px) {
-				width: 100%;
-			}
-		}
-	}
+
+        @media only screen and (max-width:700px) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    .columns-three-right {
+        margin-right: 0;
+    }
+
+    // columns-three-25-25-50
+
+    .columns-three-25-25-50 & {
+        .columns-three-left, .columns-three-middle {
+            width: 22.75%;
+        }
+        .columns-three-right {
+            width: 48.5%;
+        }
+    }
+
+    // columns-three-50-25-25
+
+    .columns-three-50-25-25 & {
+        .columns-three-left {
+            width: 48.5%;
+        }
+        .columns-three-middle, .columns-three-right {
+            width: 22.75%;
+        }
+    }
+
+    // Responsivness of layout variations
+
+
+    .columns-three-50-25-25 &,
+    .columns-three-25-25-50 & {
+        .column {
+            @media only screen and (max-width: 925px) {
+                width: 31.333%;
+                margin-right: 3%;
+                &.columns-three-right {
+                    margin-right: 0;
+                }
+            }
+            @media only screen and (max-width: 479px) {
+                width: 100%;
+            }
+        }
+    }
 }
 
 
@@ -1187,36 +1190,36 @@ code, pre, th, td { color: @font-swatch4-color; }
 
 
 .responsivecolumns {
-	.quarter {
-		width: 22.75%;
-		margin-right: 3%;
+    .columns-four-first, .columns-four-second, .columns-four-third, .columns-four-fourth {
+        width: 22.75%;
+        margin-right: 3%;
 
-		@media only screen and (max-width: 925px) {
-			width: 48.5%;
-			margin-right: 3%;
-		}
+        @media only screen and (max-width: 925px) {
+            width: 48.5%;
+            margin-right: 3%;
+        }
 
-		@media only screen and (max-width:479px) {
-			width: 100%;
-			margin-right: 0;
-		}
+        @media only screen and (max-width:479px) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 
-		&.middle--first {
-			@media only screen and (max-width: 925px) {
-				margin-right: 0;
-			}
-		}
+    .columns-four-second {
+        @media only screen and (max-width: 925px) {
+            margin-right: 0;
+        }
+    }
 
-		&.middle--second {
-			@media only screen and (max-width: 925px) {
-				clear: left;
-			}
-		}
+    .columns-four-third {
+        @media only screen and (max-width: 925px) {
+            clear: left;
+        }
+    }
 
-		&.last {
-			margin-right: 0;
-		}
-	}
+    .columns-four-fourth {
+        margin-right: 0;
+    }
 }
 
 // -------------------------
