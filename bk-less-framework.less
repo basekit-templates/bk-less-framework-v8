@@ -513,7 +513,6 @@ dfn {
   /* no style */
 }
 del {
-  color: red;
   text-decoration: line-through;
 }
 ins {
@@ -854,6 +853,7 @@ body {
     line-height: @font-swatch5-line-height;
     color: @font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
+    -webkit-text-size-adjust: 100%;
 }
 
 // Heading 1
@@ -1600,8 +1600,6 @@ body:after {
 .message {
 	position: relative;
 	clear: both;
-	margin: 1em auto;
-	max-width: 1000px;
 	color: @font-swatch5-color;
 	padding-left: 1.2em;
 	@media @mobile {
@@ -1612,7 +1610,8 @@ body:after {
 		font-family: 'FontAwesome', sans-serif;
 		position: absolute;
 		left: 0;
-		top: 0.2em;
+		top: 0;
+		line-height: 1.5;
 	}
 	h3, p {
 		margin: 0;
@@ -1843,7 +1842,7 @@ body:after {
 
 // Element Resets
 img {
-	display: block;
+	display: inline-block;
 }
 
 
@@ -2217,34 +2216,7 @@ hr.rule {
 	height: 2px;
     border: none;
     background-color: @color-swatch3;
-}
-
-
-// Alignment
-// ------------------------------
-
-.line {
-
-    // Align Right
-
-    &.align--right hr {
-        margin-left: auto;
-        margin-right: 0;
-    }
-
-    // Align Left
-
-    &.align--left hr {
-        margin-left: 0;
-        margin-right: auto;
-    }
-
-    // Align Center
-
-    &.align--center hr {
-        margin-left: auto;
-        margin-right: auto;
-    }
+    display: inline-block;
 }
 // -------------------------
 // WIDGETS: Profile
@@ -2818,7 +2790,7 @@ hr.rule {
 // -------------------------------
 
 .summary-table {
-
+    width: 100%;
     // Table Row
     .table-row {
         @media @mobile  {
