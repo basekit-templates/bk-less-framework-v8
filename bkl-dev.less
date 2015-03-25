@@ -2474,12 +2474,15 @@ hr.rule {
 	padding: 30px;
 	background-color: darken(@color-swatch1,5%);
 }
+
 // Featured Item Image Backgrounds
-.menu .menu-item--featured .item-image .image-link,
-.menu .menu-section--featured .item-image .image-link {
-	background-color: @color-swatch1;
-	height: 220px;
-	line-height: 220px;
+.menu-item--featured,
+.menu-section--featured {
+	.image-link {
+		background-color: @color-swatch1;
+		height: 220px;
+		line-height: 220px;
+	}
 }
 
 
