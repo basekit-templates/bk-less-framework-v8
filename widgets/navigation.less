@@ -16,14 +16,14 @@
     line-height: @font-swatch6-line-height;
     color: @font-swatch6-color;
     letter-spacing: @font-swatch6-letter-spacing;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
     &:hover {
         color: @font-swatch6-color-hover;
         cursor: pointer;
     }
 }
+
+
 
 // Navigation Layout
 // -----------------
@@ -57,6 +57,11 @@
     min-width: 100%;
     background-color: @color-swatch1;
     white-space: nowrap;
+
+    .item-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 // Display Dropdown Menu
 .navigation-item:hover .navigation-list--children {
