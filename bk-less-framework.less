@@ -1690,6 +1690,11 @@ body:after {
 	clear: both;
 }
 
+// Removes margin for the spacing widget
+.widget--zone-widget[data-name="space"] {
+	margin-bottom: 0;
+}
+
 
 // Micro Clearfix
 // --------------
@@ -1700,7 +1705,7 @@ body:after {
 // Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
 
 .clearfix {
-    &:after{
+    &:after {
         content:"";
         display:table;
         clear:both;
@@ -1777,7 +1782,6 @@ body:after {
     top: 100%;
     min-width: 100%;
     background-color: @color-swatch1;
-    white-space: nowrap;
 
     .item-name {
         overflow: hidden;
