@@ -1038,6 +1038,7 @@ a {
 // ---------------------
 
 blockquote {
+    quotes: "“" "”" "“" "”";
     margin: 0;
     &:before {
         content:open-quote;
@@ -2347,6 +2348,11 @@ hr.rule {
 	list-style: none;
 	margin: 0;
 }
+
+.yelpreview__review-item {
+    list-style: none;
+}
+
 // ----------------------
 // WIDGETS: YouTube
 // ----------------------
@@ -2954,6 +2960,12 @@ button.icon--add.added {
     .cell--image {
         vertical-align: top;
         width: 15%;
+    }
+
+    // Summary Item Link
+
+    .summary-item-link {
+        background-position: -1000%;
     }
 
     // Column: Price & Total
