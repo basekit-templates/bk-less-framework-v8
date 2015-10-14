@@ -19,64 +19,64 @@
 
 // Body
 body {
-    background-color: @color-swatch1;
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    font-weight: @font-swatch5-font-weight;
-    line-height: @font-swatch5-line-height;
-    color: @font-swatch5-color;
-    letter-spacing: @font-swatch5-letter-spacing;
+    background-color: @color__body--background;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__p--line-height;
+    letter-spacing: @font__p--letter-spacing;
+    color: @color__p--text;
     -webkit-text-size-adjust: 100%;
 }
 
 // Heading 1
 h1, .heading--1 {
-    font-family: @font-swatch1-font-family;
-    font-weight: @font-swatch1-font-weight;
-    color: @font-swatch1-color;
-    line-height: @font-swatch1-line-height;
-    letter-spacing: @font-swatch1-letter-spacing;
-    font-size: @font-swatch1-font-size;
+    font-family: @font__h1--font-family;
+    font-size: @font__h1--font-size;
+    font-weight: @font__h1--font-weight;
+    line-height: @font__h1--line-height;
+    letter-spacing: @font__h1--letter-spacing;
+    color: @color__h1--text;
 }
 
 // Heading 2
 h2, .heading--2 {
-    font-family: @font-swatch2-font-family;
-    font-size: @font-swatch2-font-size;
-    font-weight: @font-swatch2-font-weight;
-    line-height: @font-swatch2-line-height;
-    color: @font-swatch2-color;
-    letter-spacing: @font-swatch2-letter-spacing;
+    font-family: @font__h2--font-family;
+    font-size: @font__h2--font-size;
+    font-weight: @font__h2--font-weight;
+    line-height: @font__h2--line-height;
+    letter-spacing: @font__h2--letter-spacing;
+    color: @color__h2--text;
 }
 
 // Heading 3
 h3, .heading--3 {
-    font-family: @font-swatch3-font-family;
-    font-size: @font-swatch3-font-size;
-    font-weight: @font-swatch3-font-weight;
-    color: @font-swatch3-color;
-    line-height: @font-swatch3-line-height;
-    letter-spacing: @font-swatch3-letter-spacing;
+    font-family: @font__h3--font-family;
+    font-size: @font__h3--font-size;
+    font-weight: @font__h3--font-weight;
+    line-height: @font__h3--line-height;
+    letter-spacing: @font__h3--letter-spacing;
+    color: @color__h3--text;
 }
 
 // Heading 4
 h4, .heading--4 {
-    font-family: @font-swatch4-font-family;
-    font-size: @font-swatch4-font-size;
-    font-weight: @font-swatch4-font-weight;
-    line-height: @font-swatch4-line-height;
-    color: @font-swatch4-color;
-    letter-spacing: @font-swatch4-letter-spacing;
+    font-family: @font__h4--font-family;
+    font-size: @font__h4--font-size;
+    font-weight: @font__h4--font-weight;
+    line-height: @font__h4--line-height;
+    letter-spacing: @font__h4--letter-spacing;
+    color: @color__h4--text;
 }
 
 // Paragraph, List Elements, Blockquote
 p, .paragraph, ul, ol, li, blockquote {
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    font-weight: @font-swatch5-font-weight;
-    line-height: @font-swatch5-line-height;
-    color: @font-swatch5-color;
-    letter-spacing: @font-swatch5-letter-spacing;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__p--line-height;
+    letter-spacing: @font__p--letter-spacing;
+    color: @color__p--text;
 }
 
 // Typography Spacing
@@ -101,7 +101,7 @@ h1, h2, h3, h4, p {
 // ----------------------
 
 a {
-    color: @color-swatch2;
+    color: @color__link--text;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -122,7 +122,7 @@ blockquote {
     &:before {
         content:open-quote;
         font-family: georgia, sans-serif;
-        line-height: @font-swatch5-line-height;
+        line-height: @font__p--line-height;
     }
 }
 
@@ -134,12 +134,12 @@ blockquote {
 // ---------------------
 
 .company-link {
-    font-family: @font-swatch10-font-family;
-    font-size: @font-swatch10-font-size;
-    font-weight: @font-swatch10-font-weight;
-    color: @font-swatch10-color;
-    line-height: @font-swatch10-line-height;
-    letter-spacing: @font-swatch10-letter-spacing;
+    font-family: @font__companyname--font-family;
+    font-size: @font__companyname--font-size;
+    font-weight: @font__companyname--font-weight;
+    line-height: @font__companyname--line-height;
+    letter-spacing: @font__companyname--letter-spacing;
+    color: @color__companyname--text;
 }
 
 
@@ -149,5 +149,5 @@ blockquote {
 // 5. #Tables
 // ---------------------
 
-code, pre, th, td { color: @font-swatch4-color; }
+code, pre, th, td { color: @color__h4--text; }
 

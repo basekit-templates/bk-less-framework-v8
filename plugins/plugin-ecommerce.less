@@ -113,7 +113,7 @@ button.icon--add.added {
     margin-top: 1em;
     font-size: 12px;
     line-height: 1.2;
-    color: fade(@font-swatch5-color, 50%);
+    color: fade(@color__p--text, 50%);
 }
 
 
@@ -222,7 +222,7 @@ button.icon--add.added {
             -ms-flex-direction: column;
             flex-direction: column;
 
-            border-bottom: 1px solid darken(@color-swatch1,10%);
+            border-bottom: 1px solid darken(@color__body--background,10%);
         }
     }
 
@@ -245,15 +245,6 @@ button.icon--add.added {
         background-position: -1000%;
     }
 
-    // Column: Price & Total
-    .cell--price,
-    .cell--total {
-        width: 10%;
-        @media @mobile {
-            border-top: 1px solid darken(@color-swatch1,10%)!important;
-        }
-    }
-
     // Table Cell: General
     .cell {
         vertical-align: middle;
@@ -271,6 +262,15 @@ button.icon--add.added {
                 font-size: 12px;
                 line-height: 1.2;
             }
+        }
+    }
+
+    // Column: Price & Total
+    .cell--price,
+    .cell--total {
+        width: 10%;
+        @media @mobile {
+            border-top: 1px solid darken(@color__body--background,10%);
         }
     }
 
@@ -311,7 +311,7 @@ button.icon--add.added {
     justify-content: space-between;
 
     width: 70%;
-    background-color: darken(@color-swatch1,5%);
+    background-color: darken(@color__body--background,5%);
 
     @media @tablet {
         width: 100%;
@@ -357,7 +357,7 @@ button.icon--add.added {
 .product-image .image-link,
 .basket-item-image .image-link {
     width: 100%;
-    background-color: darken(@color-swatch1,5%);
+    background-color: darken(@color__body--background,5%);
     background-repeat: no-repeat;
     background-position: -9999px;
     overflow: hidden; // Stops large images overflowing

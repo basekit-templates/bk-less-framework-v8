@@ -846,64 +846,64 @@ body {
 
 // Body
 body {
-    background-color: @color-swatch1;
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    font-weight: @font-swatch5-font-weight;
-    line-height: @font-swatch5-line-height;
-    color: @font-swatch5-color;
-    letter-spacing: @font-swatch5-letter-spacing;
+    background-color: @color__body--background;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__p--line-height;
+    letter-spacing: @font__p--letter-spacing;
+    color: @color__p--text;
     -webkit-text-size-adjust: 100%;
 }
 
 // Heading 1
 h1, .heading--1 {
-    font-family: @font-swatch1-font-family;
-    font-weight: @font-swatch1-font-weight;
-    color: @font-swatch1-color;
-    line-height: @font-swatch1-line-height;
-    letter-spacing: @font-swatch1-letter-spacing;
-    font-size: @font-swatch1-font-size;
+    font-family: @font__h1--font-family;
+    font-size: @font__h1--font-size;
+    font-weight: @font__h1--font-weight;
+    line-height: @font__h1--line-height;
+    letter-spacing: @font__h1--letter-spacing;
+    color: @color__h1--text;
 }
 
 // Heading 2
 h2, .heading--2 {
-    font-family: @font-swatch2-font-family;
-    font-size: @font-swatch2-font-size;
-    font-weight: @font-swatch2-font-weight;
-    line-height: @font-swatch2-line-height;
-    color: @font-swatch2-color;
-    letter-spacing: @font-swatch2-letter-spacing;
+    font-family: @font__h2--font-family;
+    font-size: @font__h2--font-size;
+    font-weight: @font__h2--font-weight;
+    line-height: @font__h2--line-height;
+    letter-spacing: @font__h2--letter-spacing;
+    color: @color__h2--text;
 }
 
 // Heading 3
 h3, .heading--3 {
-    font-family: @font-swatch3-font-family;
-    font-size: @font-swatch3-font-size;
-    font-weight: @font-swatch3-font-weight;
-    color: @font-swatch3-color;
-    line-height: @font-swatch3-line-height;
-    letter-spacing: @font-swatch3-letter-spacing;
+    font-family: @font__h3--font-family;
+    font-size: @font__h3--font-size;
+    font-weight: @font__h3--font-weight;
+    line-height: @font__h3--line-height;
+    letter-spacing: @font__h3--letter-spacing;
+    color: @color__h3--text;
 }
 
 // Heading 4
 h4, .heading--4 {
-    font-family: @font-swatch4-font-family;
-    font-size: @font-swatch4-font-size;
-    font-weight: @font-swatch4-font-weight;
-    line-height: @font-swatch4-line-height;
-    color: @font-swatch4-color;
-    letter-spacing: @font-swatch4-letter-spacing;
+    font-family: @font__h4--font-family;
+    font-size: @font__h4--font-size;
+    font-weight: @font__h4--font-weight;
+    line-height: @font__h4--line-height;
+    letter-spacing: @font__h4--letter-spacing;
+    color: @color__h4--text;
 }
 
 // Paragraph, List Elements, Blockquote
 p, .paragraph, ul, ol, li, blockquote {
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    font-weight: @font-swatch5-font-weight;
-    line-height: @font-swatch5-line-height;
-    color: @font-swatch5-color;
-    letter-spacing: @font-swatch5-letter-spacing;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__p--line-height;
+    letter-spacing: @font__p--letter-spacing;
+    color: @color__p--text;
 }
 
 // Typography Spacing
@@ -928,7 +928,7 @@ h1, h2, h3, h4, p {
 // ----------------------
 
 a {
-    color: @color-swatch2;
+    color: @color__link--text;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -949,7 +949,7 @@ blockquote {
     &:before {
         content:open-quote;
         font-family: georgia, sans-serif;
-        line-height: @font-swatch5-line-height;
+        line-height: @font__p--line-height;
     }
 }
 
@@ -961,12 +961,12 @@ blockquote {
 // ---------------------
 
 .company-link {
-    font-family: @font-swatch10-font-family;
-    font-size: @font-swatch10-font-size;
-    font-weight: @font-swatch10-font-weight;
-    color: @font-swatch10-color;
-    line-height: @font-swatch10-line-height;
-    letter-spacing: @font-swatch10-letter-spacing;
+    font-family: @font__companyname--font-family;
+    font-size: @font__companyname--font-size;
+    font-weight: @font__companyname--font-weight;
+    line-height: @font__companyname--line-height;
+    letter-spacing: @font__companyname--letter-spacing;
+    color: @color__companyname--text;
 }
 
 
@@ -976,7 +976,7 @@ blockquote {
 // 5. #Tables
 // ---------------------
 
-code, pre, th, td { color: @font-swatch4-color; }
+code, pre, th, td { color: @color__h4--text; }
 
 
 
@@ -1248,13 +1248,13 @@ label {
 select {
     height: 36px;
     outline: none;
-    border: 1px solid darken(@color-swatch1,15%);
+    border: 1px solid darken(@color__body--background,15%);
     border-radius: 0;
-    background-color: @color-swatch1;
+    background-color: @color__body--background;
     font-size: 12px;
     text-indent: 0;
     &:hover, &:focus {
-        background-color: @color-swatch1;
+        background-color: @color__body--background;
         cursor: pointer;
 	}
 }
@@ -1599,7 +1599,7 @@ body:after {
 .message {
 	position: relative;
 	clear: both;
-	color: @font-swatch5-color;
+	color: @color__p--text;
 	padding-left: 1.2em;
 	@media @mobile {
 		font-size: 14px;
@@ -1616,7 +1616,7 @@ body:after {
 		margin: 0;
 		padding: 0;
 		line-height: 1.5;
-		color: @font-swatch5-color;
+		color: @color__p--text;
 		font-size: 16px;
 		@media @mobile {
 			font-size: 14px;
@@ -1737,15 +1737,15 @@ body:after {
     padding: 14px;
     text-decoration: none;
     // Font Styles
-    font-family: @font-swatch6-font-family;
-    font-size: @font-swatch6-font-size;
-    font-weight: @font-swatch6-font-weight;
-    line-height: @font-swatch6-line-height;
-    color: @font-swatch6-color;
-    letter-spacing: @font-swatch6-letter-spacing;
+    font-family: @font__navigation--font-family;
+    font-size: @font__navigation--font-size;
+    font-weight: @font__navigation--font-weight;
+    line-height: @font__navigation--line-height;
+    color: @color__navigation--text;
+    letter-spacing: @font__navigation--letter-spacing;
 
     &:hover {
-        color: @font-swatch6-color-hover;
+        color: @color__navigation--text--hover;
         cursor: pointer;
     }
 }
@@ -1782,7 +1782,7 @@ body:after {
     left: 0;
     top: 100%;
     min-width: 100%;
-    background-color: @color-swatch1;
+    background-color: @color__body--background;
 
     .item-name {
         overflow: hidden;
@@ -1811,22 +1811,22 @@ body:after {
 
 // Feature Headline
 .feature__headline {
-	font-family: @font-swatch8-font-family;
-	font-size: @font-swatch8-font-size;
-	font-weight: @font-swatch8-font-weight;
-	line-height: @font-swatch8-line-height;
-	color: @font-swatch8-color;
-	letter-spacing: @font-swatch8-letter-spacing;
+	font-family: @font__feature-headline--font-family;
+	font-size: @font__feature-headline--font-size;
+	font-weight: @font__feature-headline--font-weight;
+	line-height: @font__feature-headline--line-height;
+	letter-spacing: @font__feature-headline--letter-spacing;
+    color: @color__feature-headline--text;
 }
 
 // Feature Strapline
 .feature__strapline {
-	font-family: @font-swatch9-font-family;
-	font-size: @font-swatch9-font-size;
-	font-weight: @font-swatch9-font-weight;
-	line-height: @font-swatch9-line-height;
-	color: @font-swatch9-color;
-	letter-spacing: @font-swatch9-letter-spacing;
+	font-family: @font__feature-strapline--font-family;
+	font-size: @font__feature-strapline--font-size;
+	font-weight: @font__feature-strapline--font-weight;
+	line-height: @font__feature-strapline--line-height;
+	letter-spacing: @font__feature-strapline--letter-spacing;
+    color: @color__feature-strapline--text;
 }
 
 // Feature Button
@@ -1992,7 +1992,7 @@ img {
 
     // Figure
     .figure {
-        background-color: darken(@color-swatch1, 5%);
+        background-color: darken(@color__body--background, 5%);
         background-position: center;
         background-repeat: no-repeat;
         min-height: 400px;
@@ -2032,7 +2032,7 @@ img {
 
     // Pagination Selected Item
     .selected .button {
-        background-color: @color-swatch2;
+        background-color: @color__primary;
     }
 }
 
@@ -2101,16 +2101,16 @@ button,
     -ms-user-select: none;
 
     // Font Styles
-    font-family: @font-swatch7-font-family;
-    font-weight: @font-swatch7-font-weight;
-    color: @font-swatch7-color;
-    line-height: @font-swatch7-line-height;
-    letter-spacing: @font-swatch7-letter-spacing;
-    font-size: @font-swatch7-font-size;
-    background-color: @font-swatch7-background-color;
+    font-family: @font__button--font-family;
+    font-weight: @font__button--font-weight;
+    color: @color__button--text;
+    line-height: @font__button--line-height;
+    letter-spacing: @font__button--letter-spacing;
+    font-size: @font__button--font-size;
+    background-color: @color__button--background;
 
     &:hover {
-        background-color: @font-swatch7-background-color-hover;
+        background-color: @color__button--background--hover;
         text-decoration: none;
     }
 
@@ -2200,12 +2200,12 @@ button,
 
 // Account Name
 .account-link {
-	font-family: @font-swatch3-font-family;
-    font-size: @font-swatch3-font-size;
-    font-weight: @font-swatch3-font-weight;
-    color: @font-swatch3-color;
-    line-height: @font-swatch3-line-height;
-    letter-spacing: @font-swatch3-letter-spacing;
+	font-family: @font__h3--font-family;
+    font-size: @font__h3--font-size;
+    font-weight: @font__h3--font-weight;
+    color: @color__h3--text;
+    line-height: @font__h3--line-height;
+    letter-spacing: @font__h3--letter-spacing;
 }
 
 // Tweet List Items
@@ -2228,7 +2228,7 @@ hr.rule {
 	width: 100%;
 	height: 2px;
     border: none;
-    background-color: @color-swatch3;
+    background-color: contrast(@color__body--background, lighten(@color__body--background,30%), darken(@color__body--background,30%));
     display: inline-block;
 }
 // -------------------------
@@ -2297,6 +2297,17 @@ hr.rule {
     overflow: auto;
 }
 
+
+
+// -------------------------
+// WIDGETS: Fonecta
+// -------------------------
+
+
+.fonectacontactform input[type="checkbox"] + label {
+    display: inline-block !important;
+    vertical-align: middle;
+}
 
 
 
@@ -2389,19 +2400,19 @@ hr.rule {
 .menu-item--featured,
 .menu-section--featured {
 	padding: 20px;
-	background-color: darken(@color-swatch1,5%);
+	background-color: darken(@color__body--background,5%);
 }
 .menu-section--featured {
 	margin-bottom: 30px;
 	padding: 30px;
-	background-color: darken(@color-swatch1,5%);
+	background-color: darken(@color__body--background,5%);
 }
 
 // Featured Item Image Backgrounds
 .menu-item--featured,
 .menu-section--featured {
 	.image-link {
-		background-color: @color-swatch1;
+		background-color: @color__body--background;
 		height: 220px;
 		line-height: 220px;
 	}
@@ -2491,7 +2502,7 @@ hr.rule {
 		// Surrounding image div
 		.image-link {
 			width: 100%;
-		    background-color: darken(@color-swatch1,5%);
+		    background-color: darken(@color__body--background,5%);
 		    overflow: hidden; // Stops large images overflowing
 		    text-align: center;
 
@@ -2750,7 +2761,7 @@ button.icon--add.added {
     margin-top: 1em;
     font-size: 12px;
     line-height: 1.2;
-    color: fade(@font-swatch5-color, 50%);
+    color: fade(@color__p--text, 50%);
 }
 
 
@@ -2859,7 +2870,7 @@ button.icon--add.added {
             -ms-flex-direction: column;
             flex-direction: column;
 
-            border-bottom: 1px solid darken(@color-swatch1,10%);
+            border-bottom: 1px solid darken(@color__body--background,10%);
         }
     }
 
@@ -2882,15 +2893,6 @@ button.icon--add.added {
         background-position: -1000%;
     }
 
-    // Column: Price & Total
-    .cell--price,
-    .cell--total {
-        width: 10%;
-        @media @mobile {
-            border-top: 1px solid darken(@color-swatch1,10%)!important;
-        }
-    }
-
     // Table Cell: General
     .cell {
         vertical-align: middle;
@@ -2908,6 +2910,15 @@ button.icon--add.added {
                 font-size: 12px;
                 line-height: 1.2;
             }
+        }
+    }
+
+    // Column: Price & Total
+    .cell--price,
+    .cell--total {
+        width: 10%;
+        @media @mobile {
+            border-top: 1px solid darken(@color__body--background,10%);
         }
     }
 
@@ -2948,7 +2959,7 @@ button.icon--add.added {
     justify-content: space-between;
 
     width: 70%;
-    background-color: darken(@color-swatch1,5%);
+    background-color: darken(@color__body--background,5%);
 
     @media @tablet {
         width: 100%;
@@ -2994,7 +3005,7 @@ button.icon--add.added {
 .product-image .image-link,
 .basket-item-image .image-link {
     width: 100%;
-    background-color: darken(@color-swatch1,5%);
+    background-color: darken(@color__body--background,5%);
     background-repeat: no-repeat;
     background-position: -9999px;
     overflow: hidden; // Stops large images overflowing
