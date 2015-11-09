@@ -34,7 +34,7 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('build', function () {
   	var buildStr = recruseImports('bk-less-precompiled.less'),
-        vars = grunt.file.read('vars.less');
+        vars = grunt.file.read('validation.less');
 
     // This is the version that gets linted; includes
     // all the vars so linting doesn't fall over
