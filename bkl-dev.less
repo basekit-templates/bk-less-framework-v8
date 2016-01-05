@@ -1295,11 +1295,13 @@ blockquote {
     line-height: @font__companyname--line-height;
     letter-spacing: @font__companyname--letter-spacing;
     color: @color__companyname--text;
+    
     -ms-word-break: break-word;
     word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
+    word-wrap: break-word;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
 }
 
 
@@ -3148,9 +3150,10 @@ body:after {
 .widget__content {
     -ms-word-break: break-word;
     word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
+    word-wrap: break-word;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
 }
 
 
