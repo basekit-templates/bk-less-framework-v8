@@ -194,6 +194,7 @@ sub {
 
 img {
   border: 0;
+  height: auto;
 }
 
 /**
@@ -435,7 +436,8 @@ table {
 td,
 th {
   padding: 0;
-} // Normalize CSS 
+}
+ // Normalize CSS 
 /* 
   Typeset.css
   https://github.com/joshuarudd/typeset.css
@@ -3118,6 +3120,15 @@ button,
 }
 
 
+// Removes any scaling elements from pagination / ecom basket buttons
+.ecombasketsummary__quantity-minus,
+.ecombasketsummary__quantity-plus,
+.ecomproductslist__pagination-item .button,
+.responsiveslideshow__pagination-item .button {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 1;
+}
 
 
 // ---------------------
