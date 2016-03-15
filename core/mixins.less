@@ -7,7 +7,7 @@
 // --------------
 
 // Flexbox Display
-.flexbox(@display: flex) {
+.flex-display(@display: flex) {
     display: ~"-webkit-@{display}";
     display: ~"-moz-@{display}";
     display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
@@ -17,14 +17,14 @@
 
 // Flex
 .flex(@columns: initial) {
-    -webkit-flex: @columns;
-    -moz-flex: @columns;
-    -ms-flex: @columns;
-    flex: @columns;
+  -webkit-flex: @columns;
+     -moz-flex: @columns;
+      -ms-flex: @columns;
+          flex: @columns;
 }
 
 // Flex Wrap
-.flex-wrap(@wrap: nowrap) {
+.flex-wrap(@wrap: wrap) {
     -webkit-flex-wrap: @wrap;
     -moz-flex-wrap: @wrap;
     -ms-flex-wrap: @wrap;
@@ -33,40 +33,67 @@
 
 // Flex Direction
 .flex-direction(@direction: row) {
-    -webkit-flex-direction: @direction;
-    -moz-flex-direction: @direction;
-    -ms-flex-direction: @direction;
-    flex-direction: @direction;
+      -webkit-box-orient: @direction;
+   -webkit-box-direction: @direction;
+  -webkit-flex-direction: @direction;
+     -moz-flex-direction: @direction;
+      -ms-flex-direction: @direction;
+          flex-direction: @direction;
+}
+
+// Flex Source Order
+.flex-order(@order: 0) {
+  -webkit-box-ordinal-group: @order;
+              -webkit-order: @order;
+                 -moz-order: @order;
+                  -ms-order: @order;
+             -ms-flex-order: @order;
+                      order: @order;
+}
+
+// Flex Grow
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+     -moz-flex-grow: @grow;
+      -ms-flex-grow: @grow;
+  -ms-flex-positive: @grow;
+          flex-grow: @grow;
 }
 
 // Justify Content
 .justify-content(@justify: flex-start) {
-    -webkit-justify-content: @justify;
-    -moz-justify-content: @justify;
-    -ms-justify-content: @justify;
-    -ms-flex-pack: @justify;
-    justify-content: @justify;
+          webkit-box-pack: @justify;
+  -webkit-justify-content: @justify;
+     -moz-justify-content: @justify;
+      -ms-justify-content: @justify;
+            -ms-flex-pack: @justify;
+          justify-content: @justify;
 }
 
 // Align Content
 .align-content(@align: stretch) {
-    -webkit-align-content: @align;
-    -moz-align-content: @align;
-    -ms-flex-line-pack: @align;
-    align-content: @align;
+  -webkit-align-content: @align;
+     -moz-align-content: @align;
+      -ms-align-content: @align;
+     -ms-flex-line-pack: @align;
+          align-content: @align;
+}
+
+// Align Self
+.align-self(@align: center) {
+  -webkit-align-self: @align;
+     -moz-align-self: @align;
+      -ms-align-self: @align;
+      -ms-flex-item-align: @align;
+      -ms-flex-align: @align;
+          align-self: @align;
 }
 
 // Align Items
 .align-items(@align: stretch) {
-    -webkit-align-items: @align;
-    -moz-align-items: @align;
-    -ms-flex-align: @align;
-    align-items: @align;
-}
-
-// Order Items
-.order(@order: 0) {
-    -webkit-order: @order;
-    -ms-flex-order: @order;
-    order: @order;
+  -webkit-align-items: @align;
+     -moz-align-items: @align;
+      -ms-align-items: @align;
+       -ms-flex-align: @align;
+          align-items: @align;
 }
