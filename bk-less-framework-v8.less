@@ -437,7 +437,7 @@ td,
 th {
   padding: 0;
 }
- // Normalize CSS
+ // Normalize CSS 
 /*
   Typeset.css
   https://github.com/joshuarudd/typeset.css
@@ -975,7 +975,7 @@ blockquote {
     line-height: @font__companyname--line-height;
     letter-spacing: @font__companyname--letter-spacing;
     color: @color__companyname--text;
-
+    
     -ms-word-break: break-word;
     word-break: break-word;
     word-wrap: break-word;
@@ -1268,12 +1268,12 @@ select {
     background-color: @color__body--background;
     font-size: 12px;
     text-indent: 0;
-
+    
     @media @tablet {
-    	font-size: 16px;
-    	line-height: 1.6;
+	font-size: 16px;
+	line-height: 1.6;
     }
-
+    
     &:hover, &:focus {
         background-color: @color__body--background;
         cursor: pointer;
@@ -1295,12 +1295,12 @@ textarea,
 	-moz-box-sizing:    border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing:         border-box;
-
+	
 	@media @tablet {
 		font-size: 16px;
 		line-height: 1.6;
 	}
-
+	
 	&:focus {
 		border-color: #129fea;
 		box-shadow: inset 0 1px 3px #ddd;
@@ -1332,7 +1332,7 @@ input[type=checkbox],
 }
 
 // -------------------------
-// CORE: Image Lightbox
+// CORE: Image Lightbox 
 // -------------------------
 
 body:after {
@@ -1645,7 +1645,7 @@ body:after {
         background: transparent !important;
         color: #000 !important; /* Black prints faster: h5bp.com/s */
     }
-
+    
     .print-bg-override {
         -webkit-print-color-adjust:exact;
     }
@@ -1655,11 +1655,11 @@ body:after {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
+    
     input[type=text], input[type=email], input[type=search], .signupform fieldset input[type=email], .widget.profile form fieldset input[type=email], textarea, button {
         border: 1px solid #000 !important;
     }
-
+    
     thead {
         display: table-header-group; /* h5bp.com/t */
     }
@@ -1720,7 +1720,7 @@ body:after {
     .widget.menusections {
             display:none;
     }
-
+        
     .widget.menu .main.wrapper {
         page-break-before:always;
     }
@@ -1809,6 +1809,82 @@ body:after {
 	&:before {
 		content: "\f040"; // pencil
 	}
+}
+
+// -------------------------
+// CORE: Cookie Warning
+// -------------------------
+
+
+.bk-cookie-container {
+    background-color: rgba(0,0,0, 0.75);
+    border: 1px solid #333;
+    color: white;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: fixed;
+    text-align: center;
+    max-width: 900px;
+    width: 95%;
+    z-index: 2147483647;
+
+    p {
+        color: white;
+        padding: 0.5em 2em 0.5em 1em;
+
+        @media @tablet {
+            padding: 0.5em 2.5em 0.5em 1em;
+        }
+
+        @media @mobile {
+            padding-right: 3em;
+        }
+
+        a {
+            color: #96d3ed;
+        }
+    }
+
+    p, a {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    @media @mobile {
+        border: none;
+        border-top: 1px solid #333;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .bk-cookie-close-button {
+        color: rgba(255,255,255, 0.3);
+        line-height: 1em;
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        @media @tablet {
+            font-size: 22px;
+            line-height: 60px;
+            top: 0;
+        }
+        @media only screen and (max-width: 422px) {
+            line-height: 84px;
+            right: 15px;
+        }
+        &:hover, &:focus {
+            color: white;
+            transition: color, .5s, ease-out;
+            text-decoration: none;
+        }
+    }
 }
 
 

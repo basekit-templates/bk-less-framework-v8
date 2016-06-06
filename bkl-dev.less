@@ -2139,6 +2139,82 @@ body:after {
 	}
 }
 
+// -------------------------
+// CORE: Cookie Warning
+// -------------------------
+
+
+.bk-cookie-container {
+    background-color: rgba(0,0,0, 0.75);
+    border: 1px solid #333;
+    color: white;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: fixed;
+    text-align: center;
+    max-width: 900px;
+    width: 95%;
+    z-index: 2147483647;
+
+    p {
+        color: white;
+        padding: 0.5em 2em 0.5em 1em;
+
+        @media @tablet {
+            padding: 0.5em 2.5em 0.5em 1em;
+        }
+
+        @media @mobile {
+            padding-right: 3em;
+        }
+
+        a {
+            color: #96d3ed;
+        }
+    }
+
+    p, a {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    @media @mobile {
+        border: none;
+        border-top: 1px solid #333;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .bk-cookie-close-button {
+        color: rgba(255,255,255, 0.3);
+        line-height: 1em;
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        @media @tablet {
+            font-size: 22px;
+            line-height: 60px;
+            top: 0;
+        }
+        @media only screen and (max-width: 422px) {
+            line-height: 84px;
+            right: 15px;
+        }
+        &:hover, &:focus {
+            color: white;
+            transition: color, .5s, ease-out;
+            text-decoration: none;
+        }
+    }
+}
+
 
 
 
