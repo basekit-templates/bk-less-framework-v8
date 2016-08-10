@@ -1318,6 +1318,18 @@ textarea {
 // Forms: Radio and Checkbox
 // --------------------------
 
+.option-item--radio,
+.option-item--checkbox {
+    .flex-display;
+    .justify-content(flex-start);
+    .align-items(center); 
+
+    margin-bottom: 8px;
+    @media @tablet {
+      margin-bottom: 10px;
+    }
+}
+
 input[type=radio],
 input[type=checkbox],
 .label--radio,
@@ -1326,10 +1338,57 @@ input[type=checkbox],
   vertical-align: middle;
 }
 
+input[type="radio"] {
+    -webkit-appearance: radio !important;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto !important;
+  height: auto;
+  min-height: inherit;
+  margin-right: 5px;
+  border: 1px solid #000 !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-sizing: border-box;
+}
+
 .option-item--radio,
 .option-item--checkbox {
   list-style-type: none;
 }
+
+.label--radio,
+.label--checkbox {
+    margin-bottom: 0;
+}
+
+// Advanced Contact Form
+// ---------------------
+
+.advancedcontactform ul.option-list {
+    margin-left: 1px;
+}
+
+.advancedcontactform .option-list {
+  .label--radio,
+  .label--checkbox {
+      color: @color__p--text;
+  }
+}
+
+.advancedcontactform__select {
+  width: 100%;
+  padding-left: 5px;
+}
+
 
 // Form Validation
 // --------------------------
