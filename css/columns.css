@@ -1,0 +1,151 @@
+
+.responsivecolumns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.responsivecolumns .column {
+  float: left;
+  min-height: 40px;
+}
+.responsivecolumns .columns-two-left,
+.responsivecolumns .columns-two-right {
+  width: 48.5%;
+  margin-right: 3%;
+}
+@media only screen and (max-width: 660px) {
+  .responsivecolumns .columns-two-left,
+  .responsivecolumns .columns-two-right {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.responsivecolumns .columns-two-right {
+  margin-right: 0;
+}
+.columns-two-25-75 .responsivecolumns .columns-two-left {
+  width: 22.75%;
+}
+.columns-two-25-75 .responsivecolumns .columns-two-right {
+  width: 74.25%;
+}
+.columns-two-75-25 .responsivecolumns .columns-two-left {
+  width: 74.25%;
+}
+.columns-two-75-25 .responsivecolumns .columns-two-right {
+  width: 22.75%;
+}
+.columns-two-34-66 .responsivecolumns .columns-two-left {
+  width: 31.333%;
+}
+.columns-two-34-66 .responsivecolumns .columns-two-right {
+  width: 65.668%;
+}
+.columns-two-66-34 .responsivecolumns .columns-two-left {
+  width: 65.668%;
+}
+.columns-two-66-34 .responsivecolumns .columns-two-right {
+  width: 31.333%;
+}
+@media only screen and (max-width: 925px) {
+  .columns-two-75-25 .responsivecolumns .column,
+  .columns-two-25-75 .responsivecolumns .column,
+  .columns-two-66-34 .responsivecolumns .column,
+  .columns-two-34-66 .responsivecolumns .column {
+    width: 48.5%;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .columns-two-75-25 .responsivecolumns .column,
+  .columns-two-25-75 .responsivecolumns .column,
+  .columns-two-66-34 .responsivecolumns .column,
+  .columns-two-34-66 .responsivecolumns .column {
+    width: 100%;
+  }
+}
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right {
+  width: 31.333%;
+  margin-right: 3%;
+}
+@media only screen and (max-width: 700px) {
+  .responsivecolumns .columns-three-left,
+  .responsivecolumns .columns-three-middle,
+  .responsivecolumns .columns-three-right {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.responsivecolumns .columns-three-right {
+  margin-right: 0;
+}
+.columns-three-25-25-50 .responsivecolumns .columns-three-left,
+.columns-three-25-25-50 .responsivecolumns .columns-three-middle {
+  width: 22.75%;
+}
+.columns-three-25-25-50 .responsivecolumns .columns-three-right {
+  width: 48.5%;
+}
+.columns-three-50-25-25 .responsivecolumns .columns-three-left {
+  width: 48.5%;
+}
+.columns-three-50-25-25 .responsivecolumns .columns-three-middle,
+.columns-three-50-25-25 .responsivecolumns .columns-three-right {
+  width: 22.75%;
+}
+@media only screen and (max-width: 925px) {
+  .columns-three-50-25-25 .responsivecolumns .column,
+  .columns-three-25-25-50 .responsivecolumns .column {
+    width: 31.333%;
+    margin-right: 3%;
+  }
+  .columns-three-50-25-25 .responsivecolumns .column.columns-three-right,
+  .columns-three-25-25-50 .responsivecolumns .column.columns-three-right {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .columns-three-50-25-25 .responsivecolumns .column,
+  .columns-three-25-25-50 .responsivecolumns .column {
+    width: 100%;
+  }
+}
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+  width: 22.75%;
+  margin-right: 3%;
+}
+@media only screen and (max-width: 925px) {
+  .responsivecolumns .columns-four-first,
+  .responsivecolumns .columns-four-second,
+  .responsivecolumns .columns-four-third,
+  .responsivecolumns .columns-four-fourth {
+    width: 48.5%;
+    margin-right: 3%;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .responsivecolumns .columns-four-first,
+  .responsivecolumns .columns-four-second,
+  .responsivecolumns .columns-four-third,
+  .responsivecolumns .columns-four-fourth {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 925px) {
+  .responsivecolumns .columns-four-second {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 925px) {
+  .responsivecolumns .columns-four-third {
+    clear: left;
+  }
+}
+.responsivecolumns .columns-four-fourth {
+  margin-right: 0;
+}
