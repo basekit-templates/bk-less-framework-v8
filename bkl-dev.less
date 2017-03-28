@@ -1591,12 +1591,12 @@ select {
     background-color: @color__body--background;
     font-size: 12px;
     text-indent: 0;
-    
+
     @media @tablet {
 	font-size: 16px;
 	line-height: 1.6;
     }
-    
+
     &:hover, &:focus {
         background-color: @color__body--background;
         cursor: pointer;
@@ -1618,12 +1618,12 @@ textarea,
 	-moz-box-sizing:    border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing:         border-box;
-	
+
 	@media @tablet {
 		font-size: 16px;
 		line-height: 1.6;
 	}
-	
+
 	&:focus {
 		border-color: #129fea;
 		box-shadow: inset 0 1px 3px #ddd;
@@ -1637,6 +1637,33 @@ textarea {
 	min-height: 100px;
 }
 
+// Placeholder Text
+input,
+input:focus,
+textarea,
+textarea:focus {
+
+
+  &::-webkit-input-placeholder {
+    color: @color-swatch5;
+  }
+
+
+  &::-moz-placeholder {
+    color: @color-swatch5;
+  }
+
+
+  &:-ms-input-placeholder {
+    color: @color-swatch5;
+  }
+
+
+  &::placeholder {
+    color: @color-swatch5;
+  }
+}
+
 
 // Forms: Radio and Checkbox
 // --------------------------
@@ -1645,7 +1672,7 @@ textarea {
 .option-item--checkbox {
     .flex-display;
     .justify-content(flex-start);
-    .align-items(center); 
+    .align-items(center);
 
     margin-bottom: 8px;
     @media @tablet {
