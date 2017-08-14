@@ -2323,9 +2323,10 @@ img {
 .slides-list,
 .pagination-list,
 .responsiveslideshow .figure {
-    margin: 0;
     list-style: none;
     line-height: normal;
+    margin: 0;
+    padding: 0;
 }
 
 .slideshow-controls {
@@ -2345,6 +2346,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
+    text-align: center;
 
     &.current {
         display: list-item; // Current Item
@@ -2360,26 +2362,21 @@ img {
 
     // Figure
     .figure {
-        background-color: darken(@color__body--background, 5%);
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: 400px;
+        background-image: none;
         position: relative;
     }
 
-    // Hides Img Element
-    .image {
-        display: none;
-    }
-
-    .caption  {
+    .caption {
+        background-color: rgba(0,0,0,0.2);
         position: absolute;
         bottom: 0;
-        width: 100%;
+        left: 0;
+        right: 0;
+        line-height: normal;
         margin: 0;
         padding: 10px 20px;
-        background-color: rgba(0,0,0,0.2);
     }
+
 
     // Pagination
     // ----------
@@ -2388,42 +2385,55 @@ img {
     .pagination-item {
         display: inline-block;
         line-height: normal;
+
+        .selected & {
+            background-color: @color__primary;
+        }
     }
 
     // Pagination Button
     .button--pagination {
         padding: 3px 6px;
         font-size: 12px;
+
         &:focus {
             outline: none;
         }
     }
+}
 
-    // Pagination Selected Item
-    .selected .button {
-        background-color: @color__primary;
+
+.responsiveslideshow .contain {
+
+    .figure {
+        background-image: none!important;
+        line-height: 0;
     }
 }
 
 
-// Crop Settings
-// -------------
+.responsiveslideshow .cover {
 
-// Cover
-.responsiveslideshow .cover .figure {
-    -webkit-background-size: cover;
-    -moz-background-size:    cover;
-    -o-background-size:      cover;
-    background-size:         cover;
+    .figure {
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size:    cover;
+        -o-background-size:      cover;
+        background-size:         cover;
+        min-height: 400px;
+
+        @media @mobile {
+            min-height: 200px;
+        }
+    }
+
+    .image {
+        display: none;
+        visibility: hidden;
+    }
 }
 
-// Contain
-.responsiveslideshow .contain .figure {
-    -webkit-background-size: contain;
-    -moz-background-size:    contain;
-    -o-background-size:      contain;
-    background-size:         contain;
-}
 
 
 // Slideshow Controls
@@ -2432,9 +2442,6 @@ img {
 .slide-navigation {
     margin: 10px 0;
 }
-
-
-
 
 
 // Buttons: Standard, Tweet, Dropbox, Click to Call, PayPal (8.1 - 8.5)
