@@ -1140,11 +1140,11 @@ body {
 .icon--next:after    { content: "\f054"; }
 
 // Pause
-.icon--pause:before  { content: "\f04c"; }
+.icon--pause:before  { content: "\f04b"; }
 
 // Play
 .icon--play:before,
-.icon--pause.pause:before   { content: "\f04b"; }
+.icon--pause.pause:before   { content: "\f04c"; }
 
 
 // Plugin Icons
@@ -2731,7 +2731,8 @@ img {
 }
 
 
-.responsiveslideshow .contain {
+// Contain option uses the inline image (main zone only)
+.bk-zone .responsiveslideshow .contain {
 
     .figure {
         background-image: none!important;
@@ -2740,11 +2741,23 @@ img {
 }
 
 
-.responsiveslideshow .cover {
+// Cover & Contain defaults
+.responsiveslideshow {
 
-    .figure {
+    .cover .figure,
+    .contain .figure {
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    .contain .figure {
+        -webkit-background-size: contain;
+        -moz-background-size:    contain;
+        -o-background-size:      contain;
+        background-size:         contain;
+    }
+
+    .cover .figure {
         -webkit-background-size: cover;
         -moz-background-size:    cover;
         -o-background-size:      cover;
@@ -2756,7 +2769,7 @@ img {
         }
     }
 
-    .image {
+    .cover .image {
         display: none;
         visibility: hidden;
     }
