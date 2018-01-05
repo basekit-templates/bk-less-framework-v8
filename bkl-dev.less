@@ -2259,7 +2259,7 @@ body:after {
     right: 0;
     margin: 0 auto;
     position: fixed;
-    text-align: center;
+    text-align: left;
     max-width: 860px;
     width: 95%;
     z-index: 2147483647;
@@ -2282,11 +2282,6 @@ body:after {
         }
     }
 
-
-    @media @tablet {
-        text-align: left;
-    }
-
     @media @mobile {
         border: none;
         border-top: 1px solid #333;
@@ -2301,6 +2296,7 @@ body:after {
         -ms-flex-item-align: start;
         align-self: flex-start;
         color: rgba(255,255,255, 0.5);
+        font-weight: 600;
         line-height: 1em;
         background-color: #000;
         padding: 12px;
