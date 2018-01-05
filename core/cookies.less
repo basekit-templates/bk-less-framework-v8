@@ -15,8 +15,6 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-weight: 400;
     bottom: 10px;
     left: 0;
     right: 0;
@@ -27,6 +25,15 @@
     width: 95%;
     z-index: 2147483647;
 
+    p,
+    a {
+        font-family: 'Helvetica', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
     p {
         color: white;
         padding: 0.5em 1em;
@@ -36,10 +43,6 @@
         }
     }
 
-    p, a {
-        font-size: 15px;
-        line-height: 23px;
-    }
 
     @media @tablet {
         text-align: left;
@@ -54,6 +57,7 @@
         width: 100%;
     }
 
+
     .bk-cookie-close-button {
         -ms-flex-item-align: start;
         align-self: flex-start;
@@ -65,16 +69,11 @@
         transition: color 0.5s ease;
 
         @media @tablet {
-            font-size: 18px;
             color: white;
         }
 
-        @media only screen and (max-width: 422px) {
-            font-size: 16px;
-            line-height: 1em;
-        }
-
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             color: white;
             text-decoration: none;
         }
