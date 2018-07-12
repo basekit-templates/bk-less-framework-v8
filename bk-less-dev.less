@@ -2320,11 +2320,13 @@ body:after {
 // CORE: GDPR Forms
 // -------------------------
 
-.widget .advancedcontactform .advancedcontactform__form-group--terms,
-.widget .contactform .contactform__form-group--terms,
-.widget .signupform .signupform__form-group--terms {
+.widget .advancedcontactform .form-group.advancedcontactform__form-group--terms,
+.widget .contactform .form-group.contactform__form-group--terms,
+.widget .signupform .form-group.signupform__form-group--terms {
     .flex-display;
+    .flex-wrap(nowrap);
     .align-items(center);
+    .justify-content(flex-start);
     position: relative;
 
 
@@ -2348,9 +2350,12 @@ body:after {
 
     input[type="checkbox"] {
         margin-right: 12px;
+        height: auto;
+        width: auto;
     }
 
 
+    // Larger clickable area for touch devices
     @media only screen and (max-width: 1024px) {
 
         label {
@@ -2367,7 +2372,6 @@ body:after {
             &:after {
                 margin: auto 0;
                 position: absolute;
-                top: 0;
                 bottom: 0;
             }
 
@@ -2381,6 +2385,7 @@ body:after {
                 margin: auto 0;
                 max-height: 35px;
                 min-width: 35px;
+                top: 0;
             }
 
             &:after {
@@ -2391,10 +2396,10 @@ body:after {
                 border-width: 0 0 2px 2px;
                 content: "";
                 filter: alpha(opacity=0);
-                height: 9px;
+                height: 8px;
                 left: 9px;
-                // margin-top: -2px;
                 opacity: 0;
+                top: -2px;
                 width: 18px;
                 zoom: 1;
                 transform: rotate(-45deg);
@@ -2422,6 +2427,11 @@ body:after {
             opacity: 1;
         }
     }
+}
+
+
+.widget.signupform .signupform__form-group--terms {
+    margin-top: 12px;
 }
 
 
