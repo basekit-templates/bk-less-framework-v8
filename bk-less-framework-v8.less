@@ -801,6 +801,9 @@ body {
 // Instagram
 .icon--instagram:before { content: "\f16d"; }
 
+// Vkontakte
+.icon--vkontakte:before { content: "\f189"; }
+
 
 // Slideshow Icons
 // ---------------
@@ -1917,15 +1920,9 @@ body:after {
     background-color: rgba(0,0,0, 0.75);
     border: 1px solid #333;
     color: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    .flex-display;
+    .align-items(center);
+    .justify-content(space-between);
     bottom: 10px;
     left: 0;
     right: 0;
@@ -1965,8 +1962,8 @@ body:after {
 
 
     .bk-cookie-close-button {
-        -ms-flex-item-align: start;
-        align-self: flex-start;
+        .align-self(flex-start);
+        .flex(1 0 auto);
         color: rgba(255,255,255, 0.5);
         font-weight: 600;
         line-height: 1em;
